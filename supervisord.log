@@ -1,0 +1,960 @@
+2024-08-30 02:36:40,658 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 02:36:40,659 INFO supervisord started with pid 1
+2024-08-30 02:36:41,661 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 02:36:41,662 INFO spawned: 'redis-server' with pid 8
+2024-08-30 02:36:42,781 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 02:36:42,781 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 02:40:40,884 WARN received SIGQUIT indicating exit request
+2024-08-30 02:40:40,884 INFO waiting for php-fpm, redis-server to die
+2024-08-30 02:40:40,975 INFO stopped: redis-server (exit status 0)
+2024-08-30 02:40:40,982 INFO stopped: php-fpm (exit status 0)
+2024-08-30 02:45:00,410 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 02:45:00,412 INFO supervisord started with pid 1
+2024-08-30 02:45:01,414 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 02:45:01,417 INFO spawned: 'redis-server' with pid 8
+2024-08-30 02:45:02,468 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 02:45:02,468 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 02:50:34,981 WARN received SIGQUIT indicating exit request
+2024-08-30 02:50:34,982 INFO waiting for php-fpm, redis-server to die
+2024-08-30 02:50:35,037 INFO stopped: redis-server (exit status 0)
+2024-08-30 02:50:35,067 INFO stopped: php-fpm (exit status 0)
+2024-08-30 02:51:24,289 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 02:51:24,293 INFO supervisord started with pid 1
+2024-08-30 02:51:25,296 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 02:51:25,300 INFO spawned: 'redis-server' with pid 8
+2024-08-30 02:51:26,382 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 02:51:26,382 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 02:57:48,396 WARN received SIGQUIT indicating exit request
+2024-08-30 02:57:48,396 INFO waiting for php-fpm, redis-server to die
+2024-08-30 02:57:48,457 INFO stopped: redis-server (exit status 0)
+2024-08-30 02:57:48,466 INFO stopped: php-fpm (exit status 0)
+2024-08-30 03:01:55,103 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 03:01:55,106 INFO supervisord started with pid 1
+2024-08-30 03:01:56,109 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 03:01:56,112 INFO spawned: 'redis-server' with pid 8
+2024-08-30 03:01:57,181 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:01:57,181 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:03:00,929 INFO reaped unknown pid 46 (exit status 0)
+2024-08-30 03:03:29,457 INFO reaped unknown pid 70 (exit status 0)
+2024-08-30 03:04:19,510 INFO reaped unknown pid 120 (exit status 0)
+2024-08-30 03:23:33,440 WARN received SIGQUIT indicating exit request
+2024-08-30 03:23:33,441 INFO waiting for php-fpm, redis-server to die
+2024-08-30 03:23:33,534 INFO stopped: redis-server (exit status 0)
+2024-08-30 03:23:33,540 INFO stopped: php-fpm (exit status 0)
+2024-08-30 03:24:27,171 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 03:24:27,172 INFO supervisord started with pid 1
+2024-08-30 03:24:28,174 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 03:24:28,175 INFO spawned: 'redis-server' with pid 8
+2024-08-30 03:24:29,224 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:24:29,224 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:31:06,713 WARN received SIGQUIT indicating exit request
+2024-08-30 03:31:06,713 INFO waiting for php-fpm, redis-server to die
+2024-08-30 03:31:06,795 INFO stopped: redis-server (exit status 0)
+2024-08-30 03:31:06,801 INFO stopped: php-fpm (exit status 0)
+2024-08-30 03:32:08,069 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 03:32:08,070 INFO supervisord started with pid 1
+2024-08-30 03:32:09,072 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 03:32:09,074 INFO spawned: 'redis-server' with pid 8
+2024-08-30 03:32:10,118 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:32:10,118 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:36:18,945 WARN received SIGQUIT indicating exit request
+2024-08-30 03:36:18,945 INFO waiting for php-fpm, redis-server to die
+2024-08-30 03:36:19,045 INFO stopped: redis-server (exit status 0)
+2024-08-30 03:36:19,051 INFO stopped: php-fpm (exit status 0)
+2024-08-30 03:41:51,851 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 03:41:51,852 INFO supervisord started with pid 1
+2024-08-30 03:41:52,854 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 03:41:52,855 INFO spawned: 'redis-server' with pid 8
+2024-08-30 03:41:53,901 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:41:53,901 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:48:35,566 WARN received SIGQUIT indicating exit request
+2024-08-30 03:48:35,567 INFO waiting for php-fpm, redis-server to die
+2024-08-30 03:48:35,598 INFO stopped: redis-server (exit status 0)
+2024-08-30 03:48:35,607 INFO stopped: php-fpm (exit status 0)
+2024-08-30 03:48:57,211 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 03:48:57,213 INFO supervisord started with pid 1
+2024-08-30 03:48:58,214 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 03:48:58,214 INFO spawned: 'redis-server' with pid 8
+2024-08-30 03:48:59,252 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:48:59,252 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:54:29,427 WARN received SIGQUIT indicating exit request
+2024-08-30 03:54:29,428 INFO waiting for php-fpm, redis-server to die
+2024-08-30 03:54:29,530 INFO stopped: redis-server (exit status 0)
+2024-08-30 03:54:29,536 INFO stopped: php-fpm (exit status 0)
+2024-08-30 03:55:39,838 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 03:55:39,840 INFO supervisord started with pid 1
+2024-08-30 03:55:40,842 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 03:55:40,844 INFO spawned: 'redis-server' with pid 8
+2024-08-30 03:55:41,890 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:55:41,890 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 03:59:33,143 WARN received SIGQUIT indicating exit request
+2024-08-30 03:59:33,143 INFO waiting for php-fpm, redis-server to die
+2024-08-30 03:59:33,179 INFO stopped: redis-server (exit status 0)
+2024-08-30 03:59:33,187 INFO stopped: php-fpm (exit status 0)
+2024-08-30 04:01:15,658 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 04:01:15,660 INFO supervisord started with pid 1
+2024-08-30 04:01:16,662 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 04:01:16,663 INFO spawned: 'redis-server' with pid 8
+2024-08-30 04:01:17,704 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 04:01:17,705 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 18:43:21,394 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 18:43:21,399 INFO supervisord started with pid 1
+2024-08-30 18:43:22,401 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 18:43:22,404 INFO spawned: 'redis-server' with pid 8
+2024-08-30 18:43:23,464 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 18:43:23,464 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 18:46:56,693 WARN received SIGQUIT indicating exit request
+2024-08-30 18:46:56,694 INFO waiting for php-fpm, redis-server to die
+2024-08-30 18:46:56,720 INFO stopped: redis-server (exit status 0)
+2024-08-30 18:46:56,740 INFO stopped: php-fpm (exit status 0)
+2024-08-30 18:47:24,374 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 18:47:24,376 INFO supervisord started with pid 1
+2024-08-30 18:47:25,379 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 18:47:25,382 INFO spawned: 'redis-server' with pid 8
+2024-08-30 18:47:26,416 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 18:47:26,416 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 18:48:04,456 WARN received SIGQUIT indicating exit request
+2024-08-30 18:48:04,457 INFO waiting for php-fpm, redis-server to die
+2024-08-30 18:48:04,552 INFO stopped: redis-server (exit status 0)
+2024-08-30 18:48:04,558 INFO stopped: php-fpm (exit status 0)
+2024-08-30 18:48:21,730 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 18:48:21,731 INFO supervisord started with pid 1
+2024-08-30 18:48:22,733 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 18:48:22,734 INFO spawned: 'redis-server' with pid 8
+2024-08-30 18:48:23,771 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 18:48:23,771 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 18:50:07,629 WARN received SIGQUIT indicating exit request
+2024-08-30 18:50:07,630 INFO waiting for php-fpm, redis-server to die
+2024-08-30 18:50:07,714 INFO stopped: redis-server (exit status 0)
+2024-08-30 18:50:07,720 INFO stopped: php-fpm (exit status 0)
+2024-08-30 18:51:14,810 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-30 18:51:14,818 INFO supervisord started with pid 1
+2024-08-30 18:51:15,821 INFO spawned: 'php-fpm' with pid 7
+2024-08-30 18:51:15,822 INFO spawned: 'redis-server' with pid 8
+2024-08-30 18:51:16,880 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 18:51:16,880 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-30 18:51:35,942 WARN received SIGQUIT indicating exit request
+2024-08-30 18:51:35,942 INFO waiting for php-fpm, redis-server to die
+2024-08-30 18:51:36,018 INFO stopped: redis-server (exit status 0)
+2024-08-30 18:51:36,031 INFO stopped: php-fpm (exit status 0)
+2024-09-06 17:43:39,096 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-06 17:43:39,103 INFO supervisord started with pid 1
+2024-09-06 17:43:40,106 INFO spawned: 'php-fpm' with pid 7
+2024-09-06 17:43:40,109 INFO spawned: 'redis-server' with pid 8
+2024-09-06 17:43:41,418 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 17:43:41,418 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 17:45:11,511 WARN received SIGQUIT indicating exit request
+2024-09-06 17:45:11,511 INFO waiting for php-fpm, redis-server to die
+2024-09-06 17:45:11,565 INFO stopped: redis-server (exit status 0)
+2024-09-06 17:45:11,573 INFO stopped: php-fpm (exit status 0)
+2024-09-06 17:45:23,818 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-06 17:45:23,822 INFO supervisord started with pid 1
+2024-09-06 17:45:24,825 INFO spawned: 'php-fpm' with pid 7
+2024-09-06 17:45:24,827 INFO spawned: 'redis-server' with pid 8
+2024-09-06 17:45:25,868 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 17:45:25,868 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 17:45:59,905 WARN received SIGQUIT indicating exit request
+2024-09-06 17:45:59,906 INFO waiting for php-fpm, redis-server to die
+2024-09-06 17:45:59,963 INFO stopped: redis-server (exit status 0)
+2024-09-06 17:45:59,968 INFO stopped: php-fpm (exit status 0)
+2024-09-06 17:46:43,879 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-06 17:46:43,881 INFO supervisord started with pid 1
+2024-09-06 17:46:44,883 INFO spawned: 'php-fpm' with pid 7
+2024-09-06 17:46:44,884 INFO spawned: 'redis-server' with pid 8
+2024-09-06 17:46:45,916 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 17:46:45,916 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 17:47:12,942 WARN received SIGQUIT indicating exit request
+2024-09-06 17:47:12,943 INFO waiting for php-fpm, redis-server to die
+2024-09-06 17:47:12,999 INFO stopped: redis-server (exit status 0)
+2024-09-06 17:47:13,002 INFO stopped: php-fpm (exit status 0)
+2024-09-06 17:47:23,053 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-06 17:47:23,054 INFO supervisord started with pid 1
+2024-09-06 17:47:24,057 INFO spawned: 'php-fpm' with pid 7
+2024-09-06 17:47:24,058 INFO spawned: 'redis-server' with pid 8
+2024-09-06 17:47:25,089 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 17:47:25,089 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 17:51:40,034 INFO reaped unknown pid 38 (exit status 0)
+2024-09-06 18:42:39,514 WARN received SIGQUIT indicating exit request
+2024-09-06 18:42:39,539 INFO waiting for php-fpm, redis-server to die
+2024-09-06 18:42:39,652 INFO stopped: redis-server (exit status 0)
+2024-09-06 18:42:39,694 INFO stopped: php-fpm (exit status 0)
+2024-09-06 20:49:43,505 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-06 20:49:43,513 INFO supervisord started with pid 1
+2024-09-06 20:49:44,526 INFO spawned: 'php-fpm' with pid 7
+2024-09-06 20:49:44,529 INFO spawned: 'redis-server' with pid 8
+2024-09-06 20:49:45,620 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 20:49:45,620 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 23:10:05,154 WARN received SIGQUIT indicating exit request
+2024-09-06 23:10:05,155 INFO waiting for php-fpm, redis-server to die
+2024-09-06 23:10:05,231 INFO stopped: redis-server (exit status 0)
+2024-09-06 23:10:05,243 INFO stopped: php-fpm (exit status 0)
+2024-09-06 23:29:52,166 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-06 23:29:52,173 INFO supervisord started with pid 1
+2024-09-06 23:29:53,186 INFO spawned: 'php-fpm' with pid 7
+2024-09-06 23:29:53,189 INFO spawned: 'redis-server' with pid 8
+2024-09-06 23:29:54,278 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-06 23:29:54,278 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-07 00:45:28,965 WARN received SIGQUIT indicating exit request
+2024-09-07 00:45:28,965 INFO waiting for php-fpm, redis-server to die
+2024-09-07 00:45:29,032 INFO stopped: redis-server (exit status 0)
+2024-09-07 00:45:30,043 INFO stopped: php-fpm (exit status 0)
+2024-09-07 02:57:58,143 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-07 02:57:58,151 INFO supervisord started with pid 1
+2024-09-07 02:57:59,154 INFO spawned: 'php-fpm' with pid 7
+2024-09-07 02:57:59,156 INFO spawned: 'redis-server' with pid 8
+2024-09-07 02:58:00,242 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-07 02:58:00,243 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-07 17:28:17,763 WARN received SIGQUIT indicating exit request
+2024-09-07 17:28:17,764 INFO waiting for php-fpm, redis-server to die
+2024-09-07 17:28:17,798 INFO stopped: redis-server (exit status 0)
+2024-09-07 17:28:17,809 INFO stopped: php-fpm (exit status 0)
+2024-09-07 17:28:41,830 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-07 17:28:41,840 INFO supervisord started with pid 1
+2024-09-07 17:28:42,849 INFO spawned: 'php-fpm' with pid 7
+2024-09-07 17:28:42,855 INFO spawned: 'redis-server' with pid 8
+2024-09-07 17:28:43,894 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-07 17:28:43,894 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-07 17:29:38,270 INFO reaped unknown pid 38 (exit status 0)
+2024-09-07 17:32:49,093 WARN received SIGQUIT indicating exit request
+2024-09-07 17:32:49,094 INFO waiting for php-fpm, redis-server to die
+2024-09-07 17:32:49,179 INFO stopped: redis-server (exit status 0)
+2024-09-07 17:32:49,185 INFO stopped: php-fpm (exit status 0)
+2024-09-08 11:09:03,307 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-08 11:09:03,316 INFO supervisord started with pid 1
+2024-09-08 11:09:04,318 INFO spawned: 'php-fpm' with pid 7
+2024-09-08 11:09:04,320 INFO spawned: 'redis-server' with pid 8
+2024-09-08 11:09:05,410 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-08 11:09:05,410 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-08 11:12:25,707 WARN received SIGQUIT indicating exit request
+2024-09-08 11:12:25,707 INFO waiting for php-fpm, redis-server to die
+2024-09-08 11:12:25,815 INFO stopped: redis-server (exit status 0)
+2024-09-08 11:12:25,825 INFO stopped: php-fpm (exit status 0)
+2024-09-13 22:09:08,704 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-13 22:09:08,708 INFO supervisord started with pid 1
+2024-09-13 22:09:09,712 INFO spawned: 'php-fpm' with pid 7
+2024-09-13 22:09:09,713 INFO spawned: 'redis-server' with pid 8
+2024-09-13 22:09:10,962 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-13 22:09:10,962 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-13 22:18:16,543 WARN received SIGQUIT indicating exit request
+2024-09-13 22:18:16,543 INFO waiting for php-fpm, redis-server to die
+2024-09-13 22:18:16,584 INFO stopped: redis-server (exit status 0)
+2024-09-13 22:18:16,599 INFO stopped: php-fpm (exit status 0)
+2024-09-13 22:18:40,840 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-13 22:18:40,841 INFO supervisord started with pid 1
+2024-09-13 22:18:41,843 INFO spawned: 'php-fpm' with pid 7
+2024-09-13 22:18:41,844 INFO spawned: 'redis-server' with pid 8
+2024-09-13 22:18:42,873 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-13 22:18:42,873 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-14 03:13:23,620 WARN received SIGQUIT indicating exit request
+2024-09-14 03:13:23,630 INFO waiting for php-fpm, redis-server to die
+2024-09-14 03:13:23,743 INFO stopped: redis-server (exit status 0)
+2024-09-14 03:13:23,822 INFO stopped: php-fpm (exit status 0)
+2024-09-15 04:22:39,364 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-15 04:22:39,366 INFO supervisord started with pid 1
+2024-09-15 04:22:40,370 INFO spawned: 'php-fpm' with pid 7
+2024-09-15 04:22:40,372 INFO spawned: 'redis-server' with pid 8
+2024-09-15 04:22:41,559 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 04:22:41,559 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 04:22:45,564 WARN received SIGQUIT indicating exit request
+2024-09-15 04:22:45,564 INFO waiting for php-fpm, redis-server to die
+2024-09-15 04:22:45,641 INFO stopped: redis-server (exit status 0)
+2024-09-15 04:22:45,647 INFO stopped: php-fpm (exit status 0)
+2024-09-15 04:23:07,056 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-15 04:23:07,057 INFO supervisord started with pid 1
+2024-09-15 04:23:08,059 INFO spawned: 'php-fpm' with pid 7
+2024-09-15 04:23:08,060 INFO spawned: 'redis-server' with pid 8
+2024-09-15 04:23:09,101 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 04:23:09,101 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 04:35:16,155 WARN received SIGQUIT indicating exit request
+2024-09-15 04:35:16,155 INFO waiting for php-fpm, redis-server to die
+2024-09-15 04:35:16,194 INFO stopped: redis-server (exit status 0)
+2024-09-15 04:35:16,202 INFO stopped: php-fpm (exit status 0)
+2024-09-15 17:06:51,482 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-15 17:06:51,498 INFO supervisord started with pid 1
+2024-09-15 17:06:52,503 INFO spawned: 'php-fpm' with pid 7
+2024-09-15 17:06:52,505 INFO spawned: 'redis-server' with pid 8
+2024-09-15 17:06:53,737 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 17:06:53,737 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 17:18:27,288 WARN received SIGQUIT indicating exit request
+2024-09-15 17:18:27,289 INFO waiting for php-fpm, redis-server to die
+2024-09-15 17:18:27,338 INFO stopped: redis-server (exit status 0)
+2024-09-15 17:18:27,348 INFO stopped: php-fpm (exit status 0)
+2024-09-15 17:18:55,467 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-15 17:18:55,469 INFO supervisord started with pid 1
+2024-09-15 17:18:56,472 INFO spawned: 'php-fpm' with pid 8
+2024-09-15 17:18:56,474 INFO spawned: 'redis-server' with pid 9
+2024-09-15 17:18:57,510 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 17:18:57,510 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 17:19:31,546 WARN received SIGQUIT indicating exit request
+2024-09-15 17:19:31,555 INFO waiting for php-fpm, redis-server to die
+2024-09-15 17:19:31,624 INFO stopped: redis-server (exit status 0)
+2024-09-15 17:19:31,630 INFO stopped: php-fpm (exit status 0)
+2024-09-15 17:19:39,467 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-15 17:19:39,476 INFO supervisord started with pid 1
+2024-09-15 17:19:40,480 INFO spawned: 'php-fpm' with pid 7
+2024-09-15 17:19:40,482 INFO spawned: 'redis-server' with pid 8
+2024-09-15 17:19:41,532 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 17:19:41,533 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 20:57:32,562 WARN received SIGQUIT indicating exit request
+2024-09-15 20:57:32,571 INFO waiting for php-fpm, redis-server to die
+2024-09-15 20:57:32,624 INFO stopped: redis-server (exit status 0)
+2024-09-15 20:57:32,682 INFO stopped: php-fpm (exit status 0)
+2024-09-15 22:44:43,136 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-15 22:44:43,150 INFO supervisord started with pid 1
+2024-09-15 22:44:44,156 INFO spawned: 'php-fpm' with pid 7
+2024-09-15 22:44:44,159 INFO spawned: 'redis-server' with pid 8
+2024-09-15 22:44:45,259 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-15 22:44:45,259 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-16 09:33:55,649 WARN received SIGQUIT indicating exit request
+2024-09-16 09:33:55,650 INFO waiting for php-fpm, redis-server to die
+2024-09-16 09:33:55,709 INFO stopped: redis-server (exit status 0)
+2024-09-16 09:33:55,717 INFO stopped: php-fpm (exit status 0)
+2024-09-16 20:17:31,655 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-16 20:17:31,659 INFO supervisord started with pid 1
+2024-09-16 20:17:32,664 INFO spawned: 'php-fpm' with pid 7
+2024-09-16 20:17:32,665 INFO spawned: 'redis-server' with pid 8
+2024-09-16 20:17:33,825 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-16 20:17:33,825 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-16 20:18:51,917 INFO reaped unknown pid 76 (exit status 0)
+2024-09-16 20:42:14,599 INFO reaped unknown pid 110 (exit status 0)
+2024-09-16 20:45:47,876 INFO reaped unknown pid 128 (exit status 0)
+2024-09-17 09:46:22,922 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-17 09:46:22,932 INFO supervisord started with pid 1
+2024-09-17 09:46:23,937 INFO spawned: 'php-fpm' with pid 7
+2024-09-17 09:46:23,940 INFO spawned: 'redis-server' with pid 8
+2024-09-17 09:46:25,038 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 09:46:25,038 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 15:04:26,236 WARN received SIGQUIT indicating exit request
+2024-09-17 15:04:26,252 INFO waiting for php-fpm, redis-server to die
+2024-09-17 15:04:26,359 INFO stopped: redis-server (exit status 0)
+2024-09-17 15:04:26,406 INFO stopped: php-fpm (exit status 0)
+2024-09-17 15:06:00,280 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-17 15:06:00,298 INFO supervisord started with pid 1
+2024-09-17 15:06:01,301 INFO spawned: 'php-fpm' with pid 7
+2024-09-17 15:06:01,302 INFO spawned: 'redis-server' with pid 8
+2024-09-17 15:06:02,427 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 15:06:02,427 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 16:21:23,940 WARN received SIGQUIT indicating exit request
+2024-09-17 16:21:23,944 INFO waiting for php-fpm, redis-server to die
+2024-09-17 16:21:23,981 INFO stopped: redis-server (exit status 0)
+2024-09-17 16:21:24,013 INFO stopped: php-fpm (exit status 0)
+2024-09-17 18:12:24,782 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-17 18:12:24,791 INFO supervisord started with pid 1
+2024-09-17 18:12:25,796 INFO spawned: 'php-fpm' with pid 7
+2024-09-17 18:12:25,799 INFO spawned: 'redis-server' with pid 8
+2024-09-17 18:12:26,898 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 18:12:26,898 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 18:26:09,225 WARN received SIGQUIT indicating exit request
+2024-09-17 18:26:09,225 INFO waiting for php-fpm, redis-server to die
+2024-09-17 18:26:09,277 INFO stopped: redis-server (exit status 0)
+2024-09-17 18:26:09,285 INFO stopped: php-fpm (exit status 0)
+2024-09-17 18:26:40,276 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-17 18:26:40,277 INFO supervisord started with pid 1
+2024-09-17 18:26:41,293 INFO spawned: 'php-fpm' with pid 7
+2024-09-17 18:26:41,294 INFO spawned: 'redis-server' with pid 8
+2024-09-17 18:26:42,322 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 18:26:42,322 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 19:52:02,529 WARN received SIGQUIT indicating exit request
+2024-09-17 19:52:02,531 INFO waiting for php-fpm, redis-server to die
+2024-09-17 19:52:02,640 INFO stopped: redis-server (exit status 0)
+2024-09-17 19:52:02,663 INFO stopped: php-fpm (exit status 0)
+2024-09-17 20:53:19,595 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-17 20:53:19,603 INFO supervisord started with pid 1
+2024-09-17 20:53:20,616 INFO spawned: 'php-fpm' with pid 7
+2024-09-17 20:53:20,617 INFO spawned: 'redis-server' with pid 8
+2024-09-17 20:53:21,706 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 20:53:21,706 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 21:14:13,139 WARN received SIGQUIT indicating exit request
+2024-09-17 21:14:13,140 INFO waiting for php-fpm, redis-server to die
+2024-09-17 21:14:13,182 INFO stopped: redis-server (exit status 0)
+2024-09-17 21:14:13,188 INFO stopped: php-fpm (exit status 0)
+2024-09-17 21:22:35,991 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-17 21:22:35,992 INFO supervisord started with pid 1
+2024-09-17 21:22:36,995 INFO spawned: 'php-fpm' with pid 7
+2024-09-17 21:22:36,996 INFO spawned: 'redis-server' with pid 8
+2024-09-17 21:22:38,025 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 21:22:38,025 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 21:24:47,738 WARN received SIGQUIT indicating exit request
+2024-09-17 21:24:47,738 INFO waiting for php-fpm, redis-server to die
+2024-09-17 21:24:47,828 INFO stopped: redis-server (exit status 0)
+2024-09-17 21:24:47,833 INFO stopped: php-fpm (exit status 0)
+2024-09-17 21:39:47,104 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-17 21:39:47,105 INFO supervisord started with pid 1
+2024-09-17 21:39:48,111 INFO spawned: 'php-fpm' with pid 7
+2024-09-17 21:39:48,114 INFO spawned: 'redis-server' with pid 8
+2024-09-17 21:39:49,146 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 21:39:49,146 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 21:51:58,983 WARN received SIGQUIT indicating exit request
+2024-09-17 21:51:58,983 INFO waiting for php-fpm, redis-server to die
+2024-09-17 21:51:59,010 INFO stopped: redis-server (exit status 0)
+2024-09-17 21:51:59,018 INFO stopped: php-fpm (exit status 0)
+2024-09-17 21:52:31,242 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-17 21:52:31,244 INFO supervisord started with pid 1
+2024-09-17 21:52:32,247 INFO spawned: 'php-fpm' with pid 7
+2024-09-17 21:52:32,249 INFO spawned: 'redis-server' with pid 8
+2024-09-17 21:52:33,294 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-17 21:52:33,294 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-18 15:05:35,075 WARN received SIGQUIT indicating exit request
+2024-09-18 15:05:35,104 INFO waiting for php-fpm, redis-server to die
+2024-09-18 15:05:35,163 INFO stopped: redis-server (exit status 0)
+2024-09-18 15:05:36,217 INFO stopped: php-fpm (exit status 0)
+2024-09-18 20:13:58,580 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-18 20:13:58,589 INFO supervisord started with pid 1
+2024-09-18 20:13:59,594 INFO spawned: 'php-fpm' with pid 7
+2024-09-18 20:13:59,597 INFO spawned: 'redis-server' with pid 8
+2024-09-18 20:14:00,686 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-18 20:14:00,686 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-18 20:37:54,440 WARN received SIGQUIT indicating exit request
+2024-09-18 20:37:54,441 INFO waiting for php-fpm, redis-server to die
+2024-09-18 20:37:54,531 INFO stopped: redis-server (exit status 0)
+2024-09-18 20:37:54,535 INFO stopped: php-fpm (exit status 0)
+2024-09-19 14:35:04,210 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-19 14:35:04,216 INFO supervisord started with pid 1
+2024-09-19 14:35:05,219 INFO spawned: 'php-fpm' with pid 7
+2024-09-19 14:35:05,221 INFO spawned: 'redis-server' with pid 8
+2024-09-19 14:35:06,406 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-19 14:35:06,406 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-19 14:40:00,102 WARN received SIGQUIT indicating exit request
+2024-09-19 14:40:00,102 INFO waiting for php-fpm, redis-server to die
+2024-09-19 14:40:00,204 INFO stopped: redis-server (exit status 0)
+2024-09-19 14:40:00,212 INFO stopped: php-fpm (exit status 0)
+2024-09-19 14:40:12,138 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-19 14:40:12,139 INFO supervisord started with pid 1
+2024-09-19 14:40:13,140 INFO spawned: 'php-fpm' with pid 6
+2024-09-19 14:40:13,141 INFO spawned: 'redis-server' with pid 7
+2024-09-19 14:40:14,181 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-19 14:40:14,181 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-19 20:51:53,515 WARN received SIGQUIT indicating exit request
+2024-09-19 20:51:53,523 INFO waiting for php-fpm, redis-server to die
+2024-09-19 20:51:53,546 INFO stopped: redis-server (exit status 0)
+2024-09-19 20:51:53,577 INFO stopped: php-fpm (exit status 0)
+2024-09-19 22:14:13,169 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-19 22:14:13,185 INFO supervisord started with pid 1
+2024-09-19 22:14:14,187 INFO spawned: 'php-fpm' with pid 7
+2024-09-19 22:14:14,190 INFO spawned: 'redis-server' with pid 8
+2024-09-19 22:14:15,266 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-19 22:14:15,266 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-20 04:25:35,544 WARN received SIGQUIT indicating exit request
+2024-09-20 04:25:35,581 INFO waiting for php-fpm, redis-server to die
+2024-09-20 04:25:35,712 INFO stopped: redis-server (exit status 0)
+2024-09-20 04:25:35,775 INFO stopped: php-fpm (exit status 0)
+2024-09-20 11:20:28,038 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-20 11:20:28,049 INFO supervisord started with pid 1
+2024-09-20 11:20:29,051 INFO spawned: 'php-fpm' with pid 7
+2024-09-20 11:20:29,053 INFO spawned: 'redis-server' with pid 8
+2024-09-20 11:20:30,147 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-20 11:20:30,147 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-20 15:02:43,500 WARN received SIGQUIT indicating exit request
+2024-09-20 15:02:43,504 INFO waiting for php-fpm, redis-server to die
+2024-09-20 15:02:43,583 INFO stopped: redis-server (exit status 0)
+2024-09-20 15:02:43,595 INFO stopped: php-fpm (exit status 0)
+2024-09-20 19:43:53,693 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-20 19:43:53,704 INFO supervisord started with pid 1
+2024-09-20 19:43:54,707 INFO spawned: 'php-fpm' with pid 7
+2024-09-20 19:43:54,708 INFO spawned: 'redis-server' with pid 8
+2024-09-20 19:43:55,785 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-20 19:43:55,785 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-21 03:40:41,101 WARN received SIGQUIT indicating exit request
+2024-09-21 03:40:41,102 INFO waiting for php-fpm, redis-server to die
+2024-09-21 03:40:41,209 INFO stopped: redis-server (exit status 0)
+2024-09-21 03:40:41,219 INFO stopped: php-fpm (exit status 0)
+2024-09-21 11:47:49,505 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-21 11:47:49,515 INFO supervisord started with pid 1
+2024-09-21 11:47:50,529 INFO spawned: 'php-fpm' with pid 7
+2024-09-21 11:47:50,533 INFO spawned: 'redis-server' with pid 8
+2024-09-21 11:47:51,625 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-21 11:47:51,625 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-21 18:08:47,890 WARN received SIGQUIT indicating exit request
+2024-09-21 18:08:47,902 INFO waiting for php-fpm, redis-server to die
+2024-09-21 18:08:48,028 INFO stopped: redis-server (exit status 0)
+2024-09-21 18:08:48,136 INFO stopped: php-fpm (exit status 0)
+2024-09-22 09:09:57,745 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-22 09:09:57,756 INFO supervisord started with pid 1
+2024-09-22 09:09:58,770 INFO spawned: 'php-fpm' with pid 7
+2024-09-22 09:09:58,774 INFO spawned: 'redis-server' with pid 8
+2024-09-22 09:09:59,865 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-22 09:09:59,865 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-22 16:22:49,886 WARN received SIGQUIT indicating exit request
+2024-09-22 16:22:49,923 INFO waiting for php-fpm, redis-server to die
+2024-09-22 16:22:50,017 INFO stopped: redis-server (exit status 0)
+2024-09-22 16:22:50,060 INFO stopped: php-fpm (exit status 0)
+2024-09-22 16:23:29,021 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-22 16:23:29,026 INFO supervisord started with pid 1
+2024-09-22 16:23:30,042 INFO spawned: 'php-fpm' with pid 7
+2024-09-22 16:23:30,043 INFO spawned: 'redis-server' with pid 8
+2024-09-22 16:23:31,145 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-22 16:23:31,145 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-23 11:02:36,944 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-23 11:02:36,957 INFO supervisord started with pid 1
+2024-09-23 11:02:37,960 INFO spawned: 'php-fpm' with pid 7
+2024-09-23 11:02:37,962 INFO spawned: 'redis-server' with pid 8
+2024-09-23 11:02:39,069 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-23 11:02:39,069 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-23 15:26:00,083 WARN received SIGQUIT indicating exit request
+2024-09-23 15:26:00,098 INFO waiting for php-fpm, redis-server to die
+2024-09-23 15:26:00,132 INFO stopped: redis-server (exit status 0)
+2024-09-23 15:26:00,167 INFO stopped: php-fpm (exit status 0)
+2024-09-23 22:16:55,550 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-23 22:16:55,586 INFO supervisord started with pid 1
+2024-09-23 22:16:56,592 INFO spawned: 'php-fpm' with pid 7
+2024-09-23 22:16:56,594 INFO spawned: 'redis-server' with pid 8
+2024-09-23 22:16:57,691 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-23 22:16:57,691 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 08:15:08,407 WARN received SIGQUIT indicating exit request
+2024-09-24 08:15:08,408 INFO waiting for php-fpm, redis-server to die
+2024-09-24 08:15:08,473 INFO stopped: redis-server (exit status 0)
+2024-09-24 08:15:08,484 INFO stopped: php-fpm (exit status 0)
+2024-09-24 08:17:31,953 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-24 08:17:31,954 INFO supervisord started with pid 1
+2024-09-24 08:17:32,957 INFO spawned: 'php-fpm' with pid 7
+2024-09-24 08:17:32,958 INFO spawned: 'redis-server' with pid 8
+2024-09-24 08:17:33,996 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 08:17:33,996 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 17:38:50,450 WARN received SIGQUIT indicating exit request
+2024-09-24 17:38:50,496 INFO waiting for php-fpm, redis-server to die
+2024-09-24 17:38:50,711 INFO stopped: redis-server (exit status 0)
+2024-09-24 17:38:51,073 INFO stopped: php-fpm (exit status 0)
+2024-09-24 17:45:32,920 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-24 17:45:32,932 INFO supervisord started with pid 1
+2024-09-24 17:45:33,934 INFO spawned: 'php-fpm' with pid 7
+2024-09-24 17:45:33,938 INFO spawned: 'redis-server' with pid 8
+2024-09-24 17:45:35,029 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 17:45:35,029 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 17:46:13,087 WARN received SIGQUIT indicating exit request
+2024-09-24 17:46:13,087 INFO waiting for php-fpm, redis-server to die
+2024-09-24 17:46:13,102 INFO stopped: redis-server (exit status 0)
+2024-09-24 17:46:13,113 INFO stopped: php-fpm (exit status 0)
+2024-09-24 18:46:43,234 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-24 18:46:43,297 INFO supervisord started with pid 1
+2024-09-24 18:46:44,304 INFO spawned: 'php-fpm' with pid 7
+2024-09-24 18:46:44,308 INFO spawned: 'redis-server' with pid 8
+2024-09-24 18:46:45,408 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 18:46:45,408 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 20:47:38,399 WARN received SIGQUIT indicating exit request
+2024-09-24 20:47:38,406 INFO waiting for php-fpm, redis-server to die
+2024-09-24 20:47:38,425 INFO stopped: redis-server (exit status 0)
+2024-09-24 20:47:38,436 INFO stopped: php-fpm (exit status 0)
+2024-09-24 22:34:00,541 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-24 22:34:00,552 INFO supervisord started with pid 1
+2024-09-24 22:34:01,555 INFO spawned: 'php-fpm' with pid 7
+2024-09-24 22:34:01,556 INFO spawned: 'redis-server' with pid 8
+2024-09-24 22:34:02,649 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 22:34:02,649 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 22:57:12,601 WARN received SIGQUIT indicating exit request
+2024-09-24 22:57:12,602 INFO waiting for php-fpm, redis-server to die
+2024-09-24 22:57:12,675 INFO stopped: redis-server (exit status 0)
+2024-09-24 22:57:12,684 INFO stopped: php-fpm (exit status 0)
+2024-09-24 23:03:52,630 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-24 23:03:52,643 INFO supervisord started with pid 1
+2024-09-24 23:03:53,657 INFO spawned: 'php-fpm' with pid 7
+2024-09-24 23:03:53,661 INFO spawned: 'redis-server' with pid 8
+2024-09-24 23:03:54,750 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-24 23:03:54,750 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-25 08:51:54,418 WARN received SIGQUIT indicating exit request
+2024-09-25 08:51:54,419 INFO waiting for php-fpm, redis-server to die
+2024-09-25 08:51:54,520 INFO stopped: redis-server (exit status 0)
+2024-09-25 08:51:54,529 INFO stopped: php-fpm (exit status 0)
+2024-09-25 09:47:49,909 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-25 09:47:49,940 INFO supervisord started with pid 1
+2024-09-25 09:47:50,946 INFO spawned: 'php-fpm' with pid 7
+2024-09-25 09:47:50,950 INFO spawned: 'redis-server' with pid 8
+2024-09-25 09:47:52,044 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-25 09:47:52,044 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-25 14:59:53,540 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-25 14:59:53,550 INFO supervisord started with pid 1
+2024-09-25 14:59:54,556 INFO spawned: 'php-fpm' with pid 7
+2024-09-25 14:59:54,559 INFO spawned: 'redis-server' with pid 8
+2024-09-25 14:59:55,674 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-25 14:59:55,674 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-25 15:10:37,911 WARN received SIGQUIT indicating exit request
+2024-09-25 15:10:37,911 INFO waiting for php-fpm, redis-server to die
+2024-09-25 15:10:37,987 INFO stopped: redis-server (exit status 0)
+2024-09-25 15:10:38,002 INFO stopped: php-fpm (exit status 0)
+2024-09-25 15:10:53,507 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-25 15:10:53,508 INFO supervisord started with pid 1
+2024-09-25 15:10:54,512 INFO spawned: 'php-fpm' with pid 7
+2024-09-25 15:10:54,513 INFO spawned: 'redis-server' with pid 8
+2024-09-25 15:10:55,541 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-25 15:10:55,541 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-25 16:49:07,978 WARN received SIGQUIT indicating exit request
+2024-09-25 16:49:07,978 INFO waiting for php-fpm, redis-server to die
+2024-09-25 16:49:08,067 INFO stopped: redis-server (exit status 0)
+2024-09-25 16:49:08,087 INFO stopped: php-fpm (exit status 0)
+2024-09-25 17:27:42,175 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-25 17:27:42,185 INFO supervisord started with pid 1
+2024-09-25 17:27:43,191 INFO spawned: 'php-fpm' with pid 7
+2024-09-25 17:27:43,194 INFO spawned: 'redis-server' with pid 8
+2024-09-25 17:27:44,290 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-25 17:27:44,290 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 00:53:30,978 WARN received SIGQUIT indicating exit request
+2024-09-26 00:53:30,996 INFO waiting for php-fpm, redis-server to die
+2024-09-26 00:53:31,112 INFO stopped: redis-server (exit status 0)
+2024-09-26 00:53:31,209 INFO stopped: php-fpm (exit status 0)
+2024-09-26 08:35:51,124 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-26 08:35:51,136 INFO supervisord started with pid 1
+2024-09-26 08:35:52,143 INFO spawned: 'php-fpm' with pid 7
+2024-09-26 08:35:52,148 INFO spawned: 'redis-server' with pid 8
+2024-09-26 08:35:53,245 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 08:35:53,245 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 09:06:28,533 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-26 09:06:28,545 INFO supervisord started with pid 1
+2024-09-26 09:06:29,557 INFO spawned: 'php-fpm' with pid 7
+2024-09-26 09:06:29,559 INFO spawned: 'redis-server' with pid 8
+2024-09-26 09:06:30,649 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 09:06:30,649 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 16:52:03,712 WARN received SIGQUIT indicating exit request
+2024-09-26 16:52:03,740 INFO waiting for php-fpm, redis-server to die
+2024-09-26 16:52:03,886 INFO stopped: redis-server (exit status 0)
+2024-09-26 16:52:03,970 INFO stopped: php-fpm (exit status 0)
+2024-09-26 17:36:46,353 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-26 17:36:46,363 INFO supervisord started with pid 1
+2024-09-26 17:36:47,376 INFO spawned: 'php-fpm' with pid 7
+2024-09-26 17:36:47,379 INFO spawned: 'redis-server' with pid 8
+2024-09-26 17:36:48,471 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 17:36:48,471 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 17:40:51,762 WARN received SIGQUIT indicating exit request
+2024-09-26 17:40:51,763 INFO waiting for php-fpm, redis-server to die
+2024-09-26 17:40:51,858 INFO stopped: redis-server (exit status 0)
+2024-09-26 17:40:51,867 INFO stopped: php-fpm (exit status 0)
+2024-09-26 19:03:33,045 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-26 19:03:33,055 INFO supervisord started with pid 1
+2024-09-26 19:03:34,059 INFO spawned: 'php-fpm' with pid 7
+2024-09-26 19:03:34,063 INFO spawned: 'redis-server' with pid 8
+2024-09-26 19:03:35,158 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 19:03:35,158 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 19:10:29,657 WARN received SIGQUIT indicating exit request
+2024-09-26 19:10:29,658 INFO waiting for php-fpm, redis-server to die
+2024-09-26 19:10:29,726 INFO stopped: redis-server (exit status 0)
+2024-09-26 19:10:29,747 INFO stopped: php-fpm (exit status 0)
+2024-09-26 19:17:42,381 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-26 19:17:42,389 INFO supervisord started with pid 1
+2024-09-26 19:17:43,394 INFO spawned: 'php-fpm' with pid 7
+2024-09-26 19:17:43,397 INFO spawned: 'redis-server' with pid 8
+2024-09-26 19:17:44,486 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 19:17:44,486 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 19:30:27,456 WARN received SIGQUIT indicating exit request
+2024-09-26 19:30:27,456 INFO waiting for php-fpm, redis-server to die
+2024-09-26 19:30:27,481 INFO stopped: redis-server (exit status 0)
+2024-09-26 19:30:27,493 INFO stopped: php-fpm (exit status 0)
+2024-09-26 22:55:00,281 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-26 22:55:00,293 INFO supervisord started with pid 1
+2024-09-26 22:55:01,298 INFO spawned: 'php-fpm' with pid 7
+2024-09-26 22:55:01,300 INFO spawned: 'redis-server' with pid 8
+2024-09-26 22:55:02,397 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-26 22:55:02,397 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-27 16:13:39,393 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-27 16:13:39,404 INFO supervisord started with pid 1
+2024-09-27 16:13:40,410 INFO spawned: 'php-fpm' with pid 7
+2024-09-27 16:13:40,413 INFO spawned: 'redis-server' with pid 8
+2024-09-27 16:13:41,504 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-27 16:13:41,504 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-27 16:15:44,490 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-27 16:15:44,501 INFO supervisord started with pid 1
+2024-09-27 16:15:45,503 INFO spawned: 'php-fpm' with pid 7
+2024-09-27 16:15:45,505 INFO spawned: 'redis-server' with pid 8
+2024-09-27 16:15:46,592 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-27 16:15:46,592 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-27 17:13:29,502 WARN received SIGQUIT indicating exit request
+2024-09-27 17:13:29,502 INFO waiting for php-fpm, redis-server to die
+2024-09-27 17:13:29,594 INFO stopped: redis-server (exit status 0)
+2024-09-27 17:13:29,618 INFO stopped: php-fpm (exit status 0)
+2024-09-27 17:14:49,147 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-27 17:14:49,159 INFO supervisord started with pid 1
+2024-09-27 17:14:50,162 INFO spawned: 'php-fpm' with pid 7
+2024-09-27 17:14:50,164 INFO spawned: 'redis-server' with pid 8
+2024-09-27 17:14:51,255 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-27 17:14:51,255 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-27 17:33:17,656 WARN received SIGQUIT indicating exit request
+2024-09-27 17:33:17,657 INFO waiting for php-fpm, redis-server to die
+2024-09-27 17:33:17,708 INFO stopped: redis-server (exit status 0)
+2024-09-27 17:33:17,716 INFO stopped: php-fpm (exit status 0)
+2024-09-27 17:47:15,235 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-27 17:47:15,242 INFO supervisord started with pid 1
+2024-09-27 17:47:16,245 INFO spawned: 'php-fpm' with pid 7
+2024-09-27 17:47:16,246 INFO spawned: 'redis-server' with pid 8
+2024-09-27 17:47:17,337 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-27 17:47:17,337 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-28 00:21:48,679 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-28 00:21:48,691 INFO supervisord started with pid 1
+2024-09-28 00:21:49,858 INFO spawned: 'php-fpm' with pid 7
+2024-09-28 00:21:49,862 INFO spawned: 'redis-server' with pid 8
+2024-09-28 00:21:50,963 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-28 00:21:50,963 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-28 12:55:34,598 WARN received SIGQUIT indicating exit request
+2024-09-28 12:55:34,663 INFO waiting for php-fpm, redis-server to die
+2024-09-28 12:55:34,742 INFO stopped: redis-server (exit status 0)
+2024-09-28 12:55:34,827 INFO stopped: php-fpm (exit status 0)
+2024-09-29 01:35:13,607 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-29 01:35:13,640 INFO supervisord started with pid 1
+2024-09-29 01:35:14,648 INFO spawned: 'php-fpm' with pid 7
+2024-09-29 01:35:14,655 INFO spawned: 'redis-server' with pid 8
+2024-09-29 01:35:15,954 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 01:35:15,954 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 08:40:37,245 WARN received SIGQUIT indicating exit request
+2024-09-29 08:40:37,246 INFO waiting for php-fpm, redis-server to die
+2024-09-29 08:40:37,315 INFO stopped: redis-server (exit status 0)
+2024-09-29 08:40:37,324 INFO stopped: php-fpm (exit status 0)
+2024-09-29 09:47:45,188 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-29 09:47:45,197 INFO supervisord started with pid 1
+2024-09-29 09:47:46,199 INFO spawned: 'php-fpm' with pid 7
+2024-09-29 09:47:46,200 INFO spawned: 'redis-server' with pid 8
+2024-09-29 09:47:47,290 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 09:47:47,291 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 15:12:30,526 WARN received SIGQUIT indicating exit request
+2024-09-29 15:12:30,541 INFO waiting for php-fpm, redis-server to die
+2024-09-29 15:12:30,647 INFO stopped: redis-server (exit status 0)
+2024-09-29 15:12:30,718 INFO stopped: php-fpm (exit status 0)
+2024-09-29 16:09:50,477 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-29 16:09:50,486 INFO supervisord started with pid 1
+2024-09-29 16:09:51,491 INFO spawned: 'php-fpm' with pid 8
+2024-09-29 16:09:51,492 INFO spawned: 'redis-server' with pid 9
+2024-09-29 16:09:52,584 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 16:09:52,584 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 18:52:32,155 WARN received SIGQUIT indicating exit request
+2024-09-29 18:52:32,168 INFO waiting for php-fpm, redis-server to die
+2024-09-29 18:52:32,303 INFO stopped: redis-server (exit status 0)
+2024-09-29 18:52:32,414 INFO stopped: php-fpm (exit status 0)
+2024-09-29 18:52:48,261 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-29 18:52:48,264 INFO supervisord started with pid 1
+2024-09-29 18:52:49,270 INFO spawned: 'php-fpm' with pid 7
+2024-09-29 18:52:49,272 INFO spawned: 'redis-server' with pid 8
+2024-09-29 18:52:50,460 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 18:52:50,460 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 18:53:14,484 INFO reaped unknown pid 49 (exit status 0)
+2024-09-29 19:00:39,050 INFO reaped unknown pid 123 (exit status 0)
+2024-09-29 19:00:56,068 INFO reaped unknown pid 183 (exit status 0)
+2024-09-29 19:01:56,128 INFO reaped unknown pid 277 (exit status 0)
+2024-09-29 19:46:19,387 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-29 19:46:19,394 INFO supervisord started with pid 1
+2024-09-29 19:46:20,400 INFO spawned: 'php-fpm' with pid 7
+2024-09-29 19:46:20,403 INFO spawned: 'redis-server' with pid 8
+2024-09-29 19:46:21,496 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 19:46:21,496 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 21:34:47,287 WARN received SIGQUIT indicating exit request
+2024-09-29 21:34:47,290 INFO waiting for php-fpm, redis-server to die
+2024-09-29 21:34:47,304 INFO stopped: redis-server (exit status 0)
+2024-09-29 21:34:47,312 INFO stopped: php-fpm (exit status 0)
+2024-09-29 23:52:16,030 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-29 23:52:16,040 INFO supervisord started with pid 1
+2024-09-29 23:52:17,051 INFO spawned: 'php-fpm' with pid 7
+2024-09-29 23:52:17,052 INFO spawned: 'redis-server' with pid 8
+2024-09-29 23:52:18,150 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-29 23:52:18,151 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-30 07:31:11,450 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-30 07:31:11,459 INFO supervisord started with pid 1
+2024-09-30 07:31:12,472 INFO spawned: 'php-fpm' with pid 7
+2024-09-30 07:31:12,475 INFO spawned: 'redis-server' with pid 8
+2024-09-30 07:31:13,564 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-30 07:31:13,564 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-30 08:35:01,611 WARN received SIGQUIT indicating exit request
+2024-09-30 08:35:01,611 INFO waiting for php-fpm, redis-server to die
+2024-09-30 08:35:01,677 INFO stopped: redis-server (exit status 0)
+2024-09-30 08:35:01,686 INFO stopped: php-fpm (exit status 0)
+2024-09-30 09:47:01,077 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-30 09:47:01,090 INFO supervisord started with pid 1
+2024-09-30 09:47:02,169 INFO spawned: 'php-fpm' with pid 7
+2024-09-30 09:47:02,174 INFO spawned: 'redis-server' with pid 8
+2024-09-30 09:47:03,265 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-30 09:47:03,265 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-30 15:48:51,199 WARN received SIGQUIT indicating exit request
+2024-09-30 15:48:51,238 INFO waiting for php-fpm, redis-server to die
+2024-09-30 15:48:51,331 INFO stopped: redis-server (exit status 0)
+2024-09-30 15:48:51,471 INFO stopped: php-fpm (exit status 0)
+2024-09-30 16:20:11,540 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-30 16:20:11,559 INFO supervisord started with pid 1
+2024-09-30 16:20:12,571 INFO spawned: 'php-fpm' with pid 7
+2024-09-30 16:20:12,574 INFO spawned: 'redis-server' with pid 8
+2024-09-30 16:20:13,666 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-30 16:20:13,666 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-30 16:32:33,822 WARN received SIGQUIT indicating exit request
+2024-09-30 16:32:33,823 INFO waiting for php-fpm, redis-server to die
+2024-09-30 16:32:33,838 INFO stopped: redis-server (exit status 0)
+2024-09-30 16:32:33,844 INFO stopped: php-fpm (exit status 0)
+2024-10-01 09:47:27,631 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-01 09:47:27,643 INFO supervisord started with pid 1
+2024-10-01 09:47:28,656 INFO spawned: 'php-fpm' with pid 6
+2024-10-01 09:47:28,660 INFO spawned: 'redis-server' with pid 7
+2024-10-01 09:47:29,751 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 09:47:29,751 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 14:48:18,216 WARN received SIGQUIT indicating exit request
+2024-10-01 14:48:18,234 INFO waiting for php-fpm, redis-server to die
+2024-10-01 14:48:18,334 INFO stopped: redis-server (exit status 0)
+2024-10-01 14:48:18,444 INFO stopped: php-fpm (exit status 0)
+2024-10-01 14:55:07,812 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-01 14:55:07,824 INFO supervisord started with pid 1
+2024-10-01 14:55:08,838 INFO spawned: 'php-fpm' with pid 7
+2024-10-01 14:55:08,842 INFO spawned: 'redis-server' with pid 8
+2024-10-01 14:55:09,931 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 14:55:09,931 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 14:58:20,153 WARN received SIGQUIT indicating exit request
+2024-10-01 14:58:20,153 INFO waiting for php-fpm, redis-server to die
+2024-10-01 14:58:20,218 INFO stopped: redis-server (exit status 0)
+2024-10-01 14:58:20,227 INFO stopped: php-fpm (exit status 0)
+2024-10-01 15:34:12,120 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-01 15:34:12,131 INFO supervisord started with pid 1
+2024-10-01 15:34:13,137 INFO spawned: 'php-fpm' with pid 7
+2024-10-01 15:34:13,140 INFO spawned: 'redis-server' with pid 8
+2024-10-01 15:34:14,234 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 15:34:14,234 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 19:10:26,410 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-01 19:10:26,421 INFO supervisord started with pid 1
+2024-10-01 19:10:27,424 INFO spawned: 'php-fpm' with pid 7
+2024-10-01 19:10:27,427 INFO spawned: 'redis-server' with pid 8
+2024-10-01 19:10:28,524 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 19:10:28,524 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 19:43:57,265 WARN received SIGQUIT indicating exit request
+2024-10-01 19:43:57,266 INFO waiting for php-fpm, redis-server to die
+2024-10-01 19:43:57,297 INFO stopped: redis-server (exit status 0)
+2024-10-01 19:43:57,304 INFO stopped: php-fpm (exit status 0)
+2024-10-01 19:44:20,350 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-01 19:44:20,358 INFO supervisord started with pid 1
+2024-10-01 19:44:21,367 INFO spawned: 'php-fpm' with pid 6
+2024-10-01 19:44:21,374 INFO spawned: 'redis-server' with pid 7
+2024-10-01 19:44:22,560 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 19:44:22,561 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-01 20:18:35,040 WARN received SIGQUIT indicating exit request
+2024-10-01 20:18:35,043 INFO waiting for php-fpm, redis-server to die
+2024-10-01 20:18:35,116 INFO stopped: redis-server (exit status 0)
+2024-10-01 20:18:35,125 INFO stopped: php-fpm (exit status 0)
+2024-10-02 10:46:58,968 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-02 10:46:58,978 INFO supervisord started with pid 1
+2024-10-02 10:46:59,984 INFO spawned: 'php-fpm' with pid 6
+2024-10-02 10:46:59,987 INFO spawned: 'redis-server' with pid 7
+2024-10-02 10:47:01,104 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-02 10:47:01,104 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-02 11:15:20,778 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-02 11:15:20,788 INFO supervisord started with pid 1
+2024-10-02 11:15:21,791 INFO spawned: 'php-fpm' with pid 7
+2024-10-02 11:15:21,793 INFO spawned: 'redis-server' with pid 8
+2024-10-02 11:15:22,892 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-02 11:15:22,892 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-02 16:14:14,594 WARN received SIGQUIT indicating exit request
+2024-10-02 16:14:14,594 INFO waiting for php-fpm, redis-server to die
+2024-10-02 16:14:14,638 INFO stopped: redis-server (exit status 0)
+2024-10-02 16:14:14,654 INFO stopped: php-fpm (exit status 0)
+2024-10-02 16:56:32,924 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-02 16:56:32,959 INFO supervisord started with pid 1
+2024-10-02 16:56:33,963 INFO spawned: 'php-fpm' with pid 7
+2024-10-02 16:56:33,966 INFO spawned: 'redis-server' with pid 8
+2024-10-02 16:56:35,069 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-02 16:56:35,069 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-02 20:36:44,405 WARN received SIGQUIT indicating exit request
+2024-10-02 20:36:44,411 INFO waiting for php-fpm, redis-server to die
+2024-10-02 20:36:44,456 INFO stopped: redis-server (exit status 0)
+2024-10-02 20:36:44,499 INFO stopped: php-fpm (exit status 0)
+2024-10-02 21:35:00,233 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-02 21:35:00,245 INFO supervisord started with pid 1
+2024-10-02 21:35:01,250 INFO spawned: 'php-fpm' with pid 7
+2024-10-02 21:35:01,253 INFO spawned: 'redis-server' with pid 8
+2024-10-02 21:35:02,356 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-02 21:35:02,356 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-02 22:25:52,508 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-02 22:25:52,518 INFO supervisord started with pid 1
+2024-10-02 22:25:53,520 INFO spawned: 'php-fpm' with pid 7
+2024-10-02 22:25:53,521 INFO spawned: 'redis-server' with pid 8
+2024-10-02 22:25:54,615 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-02 22:25:54,615 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-03 09:12:25,118 WARN received SIGQUIT indicating exit request
+2024-10-03 09:12:25,128 INFO waiting for php-fpm, redis-server to die
+2024-10-03 09:12:25,180 INFO stopped: redis-server (exit status 0)
+2024-10-03 09:12:25,190 INFO stopped: php-fpm (exit status 0)
+2024-10-03 10:32:39,998 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-03 10:32:40,007 INFO supervisord started with pid 1
+2024-10-03 10:32:41,009 INFO spawned: 'php-fpm' with pid 7
+2024-10-03 10:32:41,010 INFO spawned: 'redis-server' with pid 8
+2024-10-03 10:32:42,088 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-03 10:32:42,088 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-03 10:56:52,733 WARN received SIGQUIT indicating exit request
+2024-10-03 10:56:52,733 INFO waiting for php-fpm, redis-server to die
+2024-10-03 10:56:52,797 INFO stopped: redis-server (exit status 0)
+2024-10-03 10:56:52,808 INFO stopped: php-fpm (exit status 0)
+2024-10-03 10:58:49,730 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-03 10:58:49,764 INFO supervisord started with pid 1
+2024-10-03 10:58:50,769 INFO spawned: 'php-fpm' with pid 7
+2024-10-03 10:58:50,772 INFO spawned: 'redis-server' with pid 8
+2024-10-03 10:58:51,866 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-03 10:58:51,866 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-03 14:49:17,497 WARN received SIGQUIT indicating exit request
+2024-10-03 14:49:17,504 INFO waiting for php-fpm, redis-server to die
+2024-10-03 14:49:17,585 INFO stopped: redis-server (exit status 0)
+2024-10-03 14:49:17,630 INFO stopped: php-fpm (exit status 0)
+2024-10-03 22:07:47,789 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-03 22:07:47,804 INFO supervisord started with pid 1
+2024-10-03 22:07:48,811 INFO spawned: 'php-fpm' with pid 7
+2024-10-03 22:07:48,816 INFO spawned: 'redis-server' with pid 8
+2024-10-03 22:07:49,913 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-03 22:07:49,913 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-04 17:48:52,246 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-04 17:48:52,260 INFO supervisord started with pid 1
+2024-10-04 17:48:53,263 INFO spawned: 'php-fpm' with pid 7
+2024-10-04 17:48:53,264 INFO spawned: 'redis-server' with pid 8
+2024-10-04 17:48:54,357 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-04 17:48:54,357 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-04 19:02:25,696 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-04 19:02:25,705 INFO supervisord started with pid 1
+2024-10-04 19:02:26,707 INFO spawned: 'php-fpm' with pid 7
+2024-10-04 19:02:26,709 INFO spawned: 'redis-server' with pid 8
+2024-10-04 19:02:27,807 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-04 19:02:27,807 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-04 21:35:57,115 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-04 21:35:57,126 INFO supervisord started with pid 1
+2024-10-04 21:35:58,134 INFO spawned: 'php-fpm' with pid 7
+2024-10-04 21:35:58,137 INFO spawned: 'redis-server' with pid 8
+2024-10-04 21:35:59,239 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-04 21:35:59,239 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-06 04:33:40,510 WARN received SIGQUIT indicating exit request
+2024-10-06 04:33:40,524 INFO waiting for php-fpm, redis-server to die
+2024-10-06 04:33:40,644 INFO stopped: redis-server (exit status 0)
+2024-10-06 04:33:40,711 INFO stopped: php-fpm (exit status 0)
+2024-10-06 04:37:44,455 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-06 04:37:44,498 INFO supervisord started with pid 1
+2024-10-06 04:37:45,501 INFO spawned: 'cron' with pid 7
+2024-10-06 04:37:45,503 INFO spawned: 'php-fpm' with pid 8
+2024-10-06 04:37:45,505 INFO spawned: 'redis-server' with pid 9
+2024-10-06 04:37:46,612 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-06 04:37:46,613 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-06 04:37:46,613 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-06 04:39:58,766 WARN received SIGQUIT indicating exit request
+2024-10-06 04:39:58,775 INFO waiting for cron, php-fpm, redis-server to die
+2024-10-06 04:39:58,878 INFO stopped: redis-server (exit status 0)
+2024-10-06 04:39:58,883 INFO stopped: php-fpm (exit status 0)
+2024-10-06 04:39:58,884 INFO stopped: cron (terminated by SIGTERM)
+2024-10-06 04:40:21,291 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-06 04:40:21,293 INFO supervisord started with pid 1
+2024-10-06 04:40:22,295 INFO spawned: 'cron' with pid 7
+2024-10-06 04:40:22,298 INFO spawned: 'php-fpm' with pid 8
+2024-10-06 04:40:22,299 INFO spawned: 'redis-server' with pid 9
+2024-10-06 04:40:23,334 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-06 04:40:23,335 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-06 04:40:23,335 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-06 04:40:44,357 WARN received SIGQUIT indicating exit request
+2024-10-06 04:40:44,358 INFO waiting for cron, php-fpm, redis-server to die
+2024-10-06 04:40:44,392 INFO stopped: redis-server (exit status 0)
+2024-10-06 04:40:44,399 INFO stopped: php-fpm (exit status 0)
+2024-10-06 04:40:44,400 INFO stopped: cron (terminated by SIGTERM)
+2024-10-06 04:42:15,372 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-06 04:42:15,385 INFO supervisord started with pid 1
+2024-10-06 04:42:16,387 INFO spawned: 'cron' with pid 7
+2024-10-06 04:42:16,388 INFO spawned: 'php-fpm' with pid 8
+2024-10-06 04:42:16,389 INFO spawned: 'redis-server' with pid 9
+2024-10-06 04:42:17,441 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-06 04:42:17,441 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-06 04:42:17,441 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-07 12:59:20,494 WARN received SIGQUIT indicating exit request
+2024-10-07 12:59:20,505 INFO waiting for cron, php-fpm, redis-server to die
+2024-10-07 12:59:20,550 INFO stopped: redis-server (exit status 0)
+2024-10-07 12:59:20,634 INFO stopped: php-fpm (exit status 0)
+2024-10-07 12:59:21,637 INFO stopped: cron (terminated by SIGTERM)
+2024-10-07 15:15:31,610 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-07 15:15:31,618 INFO supervisord started with pid 1
+2024-10-07 15:15:32,632 INFO spawned: 'cron' with pid 7
+2024-10-07 15:15:32,634 INFO spawned: 'php-fpm' with pid 8
+2024-10-07 15:15:32,637 INFO spawned: 'redis-server' with pid 9
+2024-10-07 15:15:33,724 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-07 15:15:33,724 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-07 15:15:33,724 INFO success: redis-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-07 17:37:32,996 WARN received SIGQUIT indicating exit request
+2024-10-07 17:37:33,001 INFO waiting for cron, php-fpm, redis-server to die
+2024-10-07 17:37:33,082 INFO stopped: redis-server (exit status 0)
+2024-10-07 17:37:33,097 INFO stopped: php-fpm (exit status 0)
+2024-10-07 17:37:34,099 INFO stopped: cron (terminated by SIGTERM)

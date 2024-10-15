@@ -1,0 +1,7 @@
+2024/03/15 04:49:12 [emerg] 1#1: host not found in upstream "haproxy:80" in /etc/nginx/sites-enabled/php-docker.local.conf:2
+2024/03/15 04:49:13 [emerg] 1#1: host not found in upstream "haproxy:80" in /etc/nginx/sites-enabled/php-docker.local.conf:2
+2024/03/15 04:49:14 [emerg] 1#1: host not found in upstream "haproxy:80" in /etc/nginx/sites-enabled/php-docker.local.conf:2
+2024/03/15 04:49:16 [emerg] 1#1: host not found in upstream "haproxy:80" in /etc/nginx/sites-enabled/php-docker.local.conf:2
+2024/03/15 04:49:17 [emerg] 1#1: host not found in upstream "haproxy:80" in /etc/nginx/sites-enabled/php-docker.local.conf:2
+2024/03/15 04:49:19 [emerg] 1#1: host not found in upstream "haproxy:80" in /etc/nginx/sites-enabled/php-docker.local.conf:2
+2024/03/15 04:49:23 [emerg] 1#1: host not found in upstream "haproxy:80" in /etc/nginx/sites-enabled/php-docker.local.conf:2

@@ -1,0 +1,75 @@
+version: "3.7"
+
+services:
+    web1:
+        build:
+            context: .
+            dockerfile: Docker/PHP/74-fpm/Dockerfile
+        restart: always
+        expose:
+            - "9000"
+        container_name: web1
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        volumes:
+            - ./:/var/www/html
+            - ./cronjobs:/etc/cron.d
+        environment:
+            APP_ENV: dev
+        networks:
+            - local-network
+        depends_on:
+            - db  # Ensure db starts before web1
+
+    db:
+        image: percona
+        restart: always
+        environment:
+            MYSQL_DATABASE: svs
+            MYSQL_USER: khaled
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - ./svs_v-2_1.sql:/docker-entrypoint-initdb.d/svs_v-2_1.sql
+            - db_data:/var/lib/mysql  # Persistent volume for MySQL data
+        networks:
+            - local-network
+
+    nginx-server:
+        build:
+            context: .
+            dockerfile: Docker/nginx/Dockerfile
+        container_name: nginx_server
+        restart: unless-stopped
+        ports:
+            - "9000:80"
+        volumes:
+            - ./:/var/www/html
+        depends_on:
+            - web1
+        networks:
+            - local-network
+
+    redis:
+        image: redis
+        restart: always
+        networks:
+            - local-network
+
+    composer-engine:
+        image: composer:latest
+        container_name: composer
+        command: install --working-dir=/var/www/html --optimize-autoloader --prefer-dist
+        volumes:
+            - ./:/var/www/html
+        networks:
+            - local-network
+        depends_on:
+            - web1  # Ensure web1 starts before composer-engine
+
+networks:
+    local-network:
+        driver: bridge
+
+volumes:
+    db_data:
