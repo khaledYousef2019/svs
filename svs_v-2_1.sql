@@ -323,7 +323,7 @@ INSERT INTO `coins` (`id`, `name`, `type`, `status`, `is_withdrawal`, `is_deposi
 (4, 'Litecoin', 'LTC', 1, 1, 1, 1, 1, '0.00000000', '99999999.00000000', '0.00000010', '0.00000010', '0.00000010', NULL, 1, 0, 0, 0, NULL, 0, 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34'),
 (5, 'Bitcoin Cash', 'BCH', 1, 1, 1, 1, 1, '0.00000000', '99999999.00000000', '0.00000010', '0.00000010', '0.00000010', NULL, 1, 0, 0, 0, NULL, 0, 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34'),
 (6, 'Dash', 'DASH', 1, 1, 1, 1, 1, '0.00000000', '99999999.00000000', '0.00000010', '0.00000010', '0.00000010', NULL, 1, 0, 0, 0, NULL, 0, 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34'),
-(7, 'SVS', 'Default', 1, 1, 1, 1, 1, '0.00000000', '99999999.00000000', '0.00000010', '0.00000010', '0.00000010', NULL, 1, 0, 0, 0, NULL, 0, 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34'),
+(7, 'SVS', 'SVS', 1, 1, 1, 1, 1, '0.00000000', '99999999.00000000', '0.00000010', '0.00000010', '0.00000010', NULL, 1, 0, 0, 0, NULL, 0, 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34'),
 (8, 'Ltct coin', 'LTCT', 1, 1, 1, 1, 1, '0.00000000', '99999999.00000000', '0.00000010', '0.00000010', '0.00000010', NULL, 1, 0, 0, 0, NULL, 0, 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34');
 
 -- --------------------------------------------------------
@@ -546,7 +546,7 @@ CREATE TABLE `membership_bonus_distribution_histories` (
   `plan_current_bonus` decimal(13,8) NOT NULL DEFAULT '0.00000000',
   `bonus_type` tinyint NOT NULL DEFAULT '0',
   `bonus_amount_btc` decimal(13,8) NOT NULL DEFAULT '0.00000000',
-  `bonus_coin_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Default',
+  `bonus_coin_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'SVS',
   `status` tinyint NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -585,7 +585,7 @@ CREATE TABLE `membership_plans` (
   `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `bonus_type` tinyint NOT NULL DEFAULT '1',
   `bonus` decimal(13,8) NOT NULL DEFAULT '0.00000000',
-  `bonus_coin_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Default',
+  `bonus_coin_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'SVS',
   `status` tinyint NOT NULL DEFAULT '1',
   `description` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -597,9 +597,9 @@ CREATE TABLE `membership_plans` (
 --
 
 INSERT INTO `membership_plans` (`id`, `plan_name`, `duration`, `amount`, `image`, `bonus_type`, `bonus`, `bonus_coin_type`, `status`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'Silver', 30, '500.00000000', NULL, 2, '2.00000000', 'Default', 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34'),
-(2, 'Gold', 30, '1000.00000000', NULL, 2, '5.00000000', 'Default', 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34'),
-(3, 'Platinum', 30, '2000.00000000', NULL, 2, '10.00000000', 'Default', 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34');
+(1, 'Silver', 30, '500.00000000', NULL, 2, '2.00000000', 'SVS', 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34'),
+(2, 'Gold', 30, '1000.00000000', NULL, 2, '5.00000000', 'SVS', 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34'),
+(3, 'Platinum', 30, '2000.00000000', NULL, 2, '10.00000000', 'SVS', 1, NULL, '2022-03-24 07:47:34', '2022-03-24 07:47:34');
 
 -- --------------------------------------------------------
 
@@ -1004,7 +1004,7 @@ CREATE TABLE `wallets` (
   `id` bigint UNSIGNED NOT NULL,
   `user_id` bigint UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `coin_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Default',
+  `coin_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'SVS',
   `coin_id` int DEFAULT NULL,
   `status` tinyint NOT NULL DEFAULT '1',
   `is_primary` tinyint NOT NULL DEFAULT '0',
@@ -1027,7 +1027,7 @@ INSERT INTO `wallets` (`id`, `user_id`, `name`, `coin_type`, `coin_id`, `status`
 (4, 1, 'LTC Wallet', 'LTC', 4, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
 (5, 1, 'BCH Wallet', 'BCH', 5, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
 (6, 1, 'DASH Wallet', 'DASH', 6, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
-(7, 1, 'Default Wallet', 'Default', 7, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
+(7, 1, 'Default Wallet', 'SVS', 7, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
 (8, 1, 'LTCT Wallet', 'LTCT', 8, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
 (9, 2, 'BTC Wallet', 'BTC', 1, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
 (10, 2, 'USDT Wallet', 'USDT', 2, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
@@ -1035,7 +1035,7 @@ INSERT INTO `wallets` (`id`, `user_id`, `name`, `coin_type`, `coin_id`, `status`
 (12, 2, 'LTC Wallet', 'LTC', 4, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
 (13, 2, 'BCH Wallet', 'BCH', 5, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
 (14, 2, 'DASH Wallet', 'DASH', 6, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
-(15, 2, 'Default Wallet', 'Default', 7, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
+(15, 2, 'SVS Wallet', 'SVS', 7, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1),
 (16, 2, 'LTCT Wallet', 'LTCT', 8, 1, 0, '0.00000000', '0.00000000', '2022-03-24 07:47:34', '2022-03-24 07:47:34', NULL, 1);
 
 -- --------------------------------------------------------

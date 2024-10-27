@@ -120,7 +120,7 @@ class CoinController extends Controller
             try {
                 $transaction = BuyCoinHistory::where(['id' => $wdrl_id, 'status' => STATUS_PENDING])->firstOrFail();
 
-                $primary = get_primary_wallet($transaction->user_id, 'Default');
+                $primary = get_primary_wallet($transaction->user_id, DEFAULT_COIN_TYPE);
                 $primary->increment('balance', $transaction->coin);
                 $transaction->status = STATUS_SUCCESS;
                 $transaction->save();
@@ -186,7 +186,7 @@ class CoinController extends Controller
                 DB::beginTransaction();
                 foreach ($request->user_id as $value) {
                     $user = User::find($value);
-                    $wallet = Wallet::where(['user_id' => $value, 'coin_type' => 'Default', 'is_primary' => STATUS_ACTIVE])->first();
+                    $wallet = Wallet::where(['user_id' => $value, 'coin_type' => DEFAULT_COIN_TYPE, 'is_primary' => STATUS_ACTIVE])->first();
                     if ($user && $wallet) {
                         $wallet->increment('balance', $request->amount);
                         $this->saveGiveCoinHistory($user->id, $wallet->id, $request->amount);

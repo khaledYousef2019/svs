@@ -152,7 +152,7 @@
                                                     <td>{{ $wallet->updated_at }}</td>
                                                     <td>
                                                         <ul class="d-flex justify-content-center align-items-center">
-                                                            @if($wallet->coin_type == 'Default')
+                                                            @if($wallet->coin_type == DEFAULT_COIN_TYPE)
                                                                 <li>
                                                                     <a title="{{__('Request Coin')}}"
                                                                        href="{{route('requestCoin')}}">

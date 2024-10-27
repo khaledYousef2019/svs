@@ -29,7 +29,7 @@ class ClubController extends Controller
     {
         try {
             $plans = MembershipPlan::where(['status' => STATUS_ACTIVE])->get();
-            $wallets = Wallet::where(['user_id' => Auth::id(), 'coin_type' => 'Default'])->get();
+            $wallets = Wallet::where(['user_id' => Auth::id(), 'coin_type' => DEFAULT_COIN_TYPE])->get();
             $smallPlan = MembershipPlan::where(['status' => STATUS_ACTIVE])->orderBy('amount', 'asc')->first();
 
             if ($plans->isEmpty()) {

@@ -341,7 +341,7 @@ class CoinController extends Controller
     public function requestCoin(Request $request)
     {
         try {
-            $data['wallets'] = Wallet::where(['user_id' => Auth::id(), 'coin_type' => 'Default'])
+            $data['wallets'] = Wallet::where(['user_id' => Auth::id(), 'coin_type' => DEFAULT_COIN_TYPE])
                 ->where('balance', '>', 0)
                 ->get();
             $data['coin'] = Coin::where(['type' => DEFAULT_COIN_TYPE])->first();

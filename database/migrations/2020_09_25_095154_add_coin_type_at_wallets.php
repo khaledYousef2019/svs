@@ -14,7 +14,7 @@ class AddCoinTypeAtWallets extends Migration
     public function up()
     {
         Schema::table('wallets', function (Blueprint $table) {
-            $table->string('coin_type')->default('Default')->after('name');
+            $table->string('coin_type')->default(DEFAULT_COIN_TYPE)->after('name');
         });
     }
 
