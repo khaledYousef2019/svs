@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: bacchu
- * Date: 1/25/22
+ * User: khaled
+ * Date: 30/10/24
  * Time: 5:19 PM
  */
 
@@ -37,6 +37,11 @@ class CustomTokenRepository
         $this->walletAddress = $this->settings['wallet_address'] ?? '';
         $this->walletPk = $this->settings['private_key'] ?? '';
         $this->contractCoinName = $this->settings['contract_coin_name'] ?? 'ETH';
+    }
+
+    public function setCurrentChain($chain)
+    {
+        $this->tokenApi->setCurrentChain($chain);
     }
 
     public function depositCustomToken()
@@ -114,6 +119,7 @@ class CustomTokenRepository
                             storeException('balance after', $wallet->balance);
                         }
                         $response = ['success' => true, 'message' => __('New deposit'), 'data' => $createDeposit, 'pk' => $checkAddress->wallet_key];
+
                     } else {
                         $response = ['success' => false, 'message' => 'deposit credited failed', 'data' => []];
                     }

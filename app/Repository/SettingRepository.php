@@ -178,6 +178,9 @@ class SettingRepository
                 AdminSetting::updateOrCreate(['slug' => 'COMPARE_WEBSITE'], ['value' => $request->COMPARE_WEBSITE]);
             }
             if (isset($request->COIN_PAYMENT_PUBLIC_KEY)) {
+                if (!decrypt($request->COIN_PAYMENT_PUBLIC_KEY)) {
+                    $request->COIN_PAYMENT_PUBLIC_KEY = encrypt($request->COIN_PAYMENT_PUBLIC_KEY);
+                }
                 AdminSetting::updateOrCreate(['slug' => 'COIN_PAYMENT_PUBLIC_KEY'], ['value' => $request->COIN_PAYMENT_PUBLIC_KEY]);
             }
             if (isset($request->COIN_PAYMENT_PRIVATE_KEY)) {

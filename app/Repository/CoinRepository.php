@@ -455,7 +455,7 @@ class CoinRepository
 //        }
 //    }
 
-    public function buyCoinWithStripe($request, $coin_amount, $coin_price_doller, $coin_price_btc, $phase_id, $referral_level, $phase_fees, $bonus, $affiliation_percentage)
+    public function buyCoinWithStripe($request, $coin_amount, $coin_price_doller, $coin_price_btc, $phase_id, possible$referral_level, $phase_fees, $bonus, $affiliation_percentage)
     {
         $response = ['success' => false, 'message' => __('Something went wrong'), 'data' => (object)[]];
 

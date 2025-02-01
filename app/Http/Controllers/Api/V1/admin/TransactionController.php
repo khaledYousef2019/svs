@@ -38,8 +38,7 @@ class TransactionController extends Controller
             );
         $fieldTableMap = [
             'name' => 'wallets',
-            'first_name' => 'users',
-            'last_name' => 'users',
+            'first_name.last_name' => 'users',
         ];
         $items = $this->applyFiltersAndSorting($query, $request, $fieldTableMap);
         $data = $items->getCollection()->transform(function ($item) {
@@ -431,27 +430,33 @@ class TransactionController extends Controller
                 Wallet::where(['id' => $transaction->receiver_wallet_id])->increment('balance', $transaction->amount);
                 $transaction->status = STATUS_SUCCESS;
                 $transaction->save();
+                if($transaction){
+                    sendTransactionEmail('transactions.withdraw-confirmed',$transaction);
+                }
             } elseif ($transaction->address_type == ADDRESS_TYPE_EXTERNAL) {
                 // Handle external transactions
                 if ($transaction->coin_type == DEFAULT_COIN_TYPE) {
-                    $settings = allsetting();
-                    $coinApi = new ERC20TokenApi();
-                    $requestData = [
-                        "amount_value" => (float)$transaction->amount,
-                        "from_address" => $settings['wallet_address'] ?? '',
-                        "to_address" => $transaction->address,
-                        "contracts" => $settings['private_key'] ?? ''
-                    ];
-                    $result = $coinApi->sendCustomToken($requestData);
-                    if ($result['success'] == true) {
-                        $transaction->transaction_hash = $result['data']->hash;
-                        $transaction->used_gas = $result['data']->used_gas;
+//                    $settings = allsetting();
+//                    $coinApi = new ERC20TokenApi();
+//                    $requestData = [
+//                        "amount_value" => (float)$transaction->amount,
+//                        "from_address" => $settings['wallet_address'] ?? '',
+//                        "to_address" => $transaction->address,
+//                        "contracts" => $settings['private_key'] ?? ''
+//                    ];
+//                    $result = $coinApi->sendCustomToken($requestData);
+//                    if ($result['success'] == true) {
+//                        $transaction->transaction_hash = $result['data']->hash;
+//                        $transaction->used_gas = $result['data']->used_gas;
                         $transaction->status = STATUS_SUCCESS;
                         $transaction->update();
+                        if($transaction->wasChanged()){
+                            sendTransactionEmail('transactions.withdraw-confirmed',$transaction);
+                        }
                         dispatch(new DistributeWithdrawalReferralBonus($transaction))->onQueue('referral');
-                    } else {
-                        return response()->json(['error' => $result['message']], 400);
-                    }
+//                    } else {
+//                        return response()->json(['error' => $result['message']], 400);
+//                    }
                 } else {
                     $currency = $transaction->coin_type;
                     $coinpayment = new CoinPaymentsAPI();
@@ -460,6 +465,9 @@ class TransactionController extends Controller
                         $transaction->transaction_hash = $response['result']['id'];
                         $transaction->status = STATUS_SUCCESS;
                         $transaction->update();
+                        if($transaction->wasChanged()){
+                            sendTransactionEmail('transactions.withdraw-confirmed',$transaction);
+                        }
                         dispatch(new DistributeWithdrawalReferralBonus($transaction))->onQueue('referral');
                     } else {
                         return response()->json(['error' => $response['error']], 400);
@@ -499,6 +507,9 @@ class TransactionController extends Controller
                 Wallet::where(['id' => $transaction->wallet_id])->increment('balance', $amount);
                 $transaction->status = STATUS_REJECTED;
                 $transaction->update();
+            }
+            if($transaction->wasChanged()){
+                sendTransactionEmail('transactions.withdraw-rejected',$transaction);
             }
             return response()->json(['success' => 'Pending withdrawal rejected Successfully.']);
         } catch (\Exception $e) {

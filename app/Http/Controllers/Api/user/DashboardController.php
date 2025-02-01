@@ -11,6 +11,7 @@ use App\Model\DepositeTransaction;
 use App\Model\Faq;
 use App\Model\MembershipClub;
 use App\Model\Notification;
+use App\Model\Wallet;
 use App\Model\WithdrawHistory;
 use App\Services\Logger;
 use Carbon\Carbon;
@@ -121,6 +122,22 @@ class DashboardController extends Controller
             $allBuyCoin[] =  isset($data['coin'][$month]) ? $data['coin'][$month] : 0;
         }
         $data['monthly_buy_coin'] = $allBuyCoin;
+
+        $data['wallets'] = Wallet::join('coins', 'coins.id', '=', 'wallets.coin_id')
+            ->where(['wallets.user_id' => Auth::id(), 'wallets.type' => PERSONAL_WALLET, 'coins.status' => STATUS_ACTIVE])
+            ->orderBy('id', 'ASC')
+            ->select('wallets.*','coins.usd')
+            ->get();
+        // $list = [];
+        $total_balance = 0;
+        foreach($data['wallets'] as $wallet){
+            if($wallet->balance != 0){
+                $total_balance = bcadd(bcmul($wallet->usd , $wallet->balance,8),$total_balance ,8);
+
+            }
+        }
+        $data['balance_dollar'] = number_format($total_balance,2);
+
         $data = ['success' => true, 'data' => $data, 'message' => __('Dashboard data')];
         return response()->json($data);
     }
@@ -215,16 +232,17 @@ class DashboardController extends Controller
 
     public function depositeOrWithdrawList(Request $request){
         $limit = $request->limit ?? 5;
+        $wallet_id = $request->wallet_id ?? null;
         $tr = new TransactionService();
         if ($request->type == 'deposit') {
-            $histories = $tr->depositTransactionHistories(Auth::id())->paginate($limit);
+            $histories = $tr->depositTransactionHistories(Auth::id(),null,$wallet_id)->paginate($limit);
             foreach ($histories as &$history){
                 $history->transaction_hash = $history->transaction_id;
             }
             $data = ['success' => true, 'data' => $histories, 'message' => __('Deposit List')];
             return response()->json($data);
         } else {
-            $histories = $tr->withdrawTransactionHistories(Auth::id())->paginate($limit);
+            $histories = $tr->withdrawTransactionHistories(Auth::id(),null,$wallet_id)->paginate($limit);
             $data = ['success' => true, 'data' => $histories, 'message' => __('Withdraw List')];
             return response()->json($data);
         }

@@ -83,11 +83,13 @@ class ClubController extends Controller
     public function membershipDetails(){
         try {
             $club = MembershipClub::where(['user_id' => Auth::id(), 'status'=>STATUS_ACTIVE])->first();
-            $club->bonus_amount = user_plan_bonus($club->user_id);
-            $club->coin_name = settings('coin_name');
-            $club->plan_name = $club->plan->plan_name;
-            $club->membership_status = !empty($club->plan_id) ? $club->plan->plan_name. __(' Member') : __('Normal Member');
-            $club->plan_image = show_plan_image($club->plan_id,$club->plan->image);
+            if ($club){
+                $club->bonus_amount = user_plan_bonus($club->user_id);
+                $club->coin_name = settings('coin_name');
+                $club->plan_name = $club->plan->plan_name;
+                $club->membership_status = !empty($club->plan_id) ? $club->plan->plan_name. __(' Member') : __('Normal Member');
+                $club->plan_image = show_plan_image($club->plan_id,$club->plan->image);
+            }
             $response = ['success' => true, 'data'=>$club, 'message' => __('Membership Details')];
         }
         catch(\Exception $e) {
@@ -95,7 +97,7 @@ class ClubController extends Controller
         }
         return response()->json($response);
     }
-    
+
     public function membershipDetailsHome(){
         try {
             $clubInfo = get_plan_info(Auth::id());

@@ -183,7 +183,7 @@ class ProfileController extends Controller
      * subnit Passport information
      */
     public function submitPassportPhoto(Request $request){
-        if((isset($request->front_image) && !empty($request->front_image)) && (isset($request->back_image) && !empty($request->back_image))){
+        if(isset($request->front_image) && !empty($request->front_image)){
             $details = VerificationDetails::where('user_id', Auth::id())->where('field_name', 'pass_front')->first();
             if (empty($details)) {
                 $details = new VerificationDetails();
@@ -195,17 +195,7 @@ class ProfileController extends Controller
             $details->photo = $photo;
             $details->save();
             $image['pass_front'] = asset(IMG_USER_PATH.$details->photo);
-            $details = VerificationDetails::where('user_id', Auth::id())->where('field_name', 'pass_back')->first();
-            if (empty($details)) {
-                $details = new VerificationDetails();
-            }
-            $details->field_name = 'pass_back';
-            $details->user_id = Auth::id();
-            $details->status = STATUS_PENDING;
-            $photo = uploadFile($request->back_image, IMG_USER_PATH, !empty($details->photo) ? $details->photo : '');
-            $details->photo = $photo;
-            $details->save();
-            $image['pass_back'] = asset(IMG_USER_PATH.$details->photo);
+
             $data = ['success' => true, 'data' => $image, 'message' => __('passport photo uploaded successfully')];
         }
         else{
@@ -380,7 +370,7 @@ class ProfileController extends Controller
                 $google2fa = new Google2FA();
                 $google2fa->setAllowInsecureCallToGoogleApis(true);
                 $data['google2fa_secret'] = $google2fa->generateSecretKey();
-                $google2fa_url = $google2fa->getQRCodeGoogleUrl(
+                $google2fa_url = $google2fa->getQRCodeUrl(
                     isset($default['app_title']) && !empty($default['app_title']) ? $default['app_title'] : 'svs',
                     isset(Auth::user()->email) && !empty(Auth::user()->email) ? Auth::user()->email : 'svs@svscoin.org',
                     $data['google2fa_secret']

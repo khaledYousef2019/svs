@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Http\Services\CommonService;
 use App\Jobs\ConvertCoin;
+use App\Model\Chain;
 use App\Model\DepositeTransaction;
 use App\Model\Wallet;
 use App\Model\WalletAddressHistory;
@@ -283,6 +284,7 @@ class WalletRepository
         return $data;
     }
 
+
     // generate token address
     public function generateTokenAddress($walletId)
     {
@@ -311,22 +313,95 @@ class WalletRepository
                         'public_key' => $createWallet['data']->publicKey ?? ''
                     ]);
                     $response = $createWallet['data']->address;
-//                    $response = [
-//                        'success' => true,
-//                        'message' => __('Address generated successfully'),
-//                    ];
                 }
-//                else {
-//                    $response = [
-//                        'success' => false,
-//                        'message' => __('Address generate failed'),
-//                    ];
-//                }
             }
         } catch (\Exception $e) {
             storeException('generateTokenAddress ex', $e->getMessage());
             $response = ['success' => false, 'message' => $e->getMessage()];
         }
+        return $response;
+    }
+
+    public function generateMultiChainTokenAddresses($walletId): array
+    {
+        $response = [
+            'success' => false,
+            'message' => 'Wallet generation failed',
+            'addresses' => []
+        ];
+
+        try {
+            $wallet = Wallet::find($walletId);
+            if (!$wallet) {
+                throw new \Exception('Wallet not found');
+            }
+
+            $chains = Chain::join('real_wallets','real_wallets.chain_id','=','chains.id')
+                ->join('tokens','tokens.chain_id','=','chains.id')
+                ->where('chains.status',STATUS_ACTIVE)
+                ->select('chains.*','real_wallets.*','tokens.*','chains.name as chain_name')
+                ->get();
+
+            $tokenApi = new ERC20TokenApi();
+            $generatedAddresses = [];
+
+            foreach ($chains as $chain) {
+                // Check if an address already exists for this chain
+                $existingAddress = WalletAddressHistory::where('wallet_id', $walletId)
+                    ->where('coin_type', $wallet->coin_type)
+                    ->where('chain_id',$chain->id)
+                    ->orderBy('created_at', 'desc')
+                    ->first();
+
+                if ($existingAddress && !empty($existingAddress->address)) {
+                    $generatedAddresses[] = ['chain' => $chain->chain_name , 'address' => $existingAddress->address];
+                    continue;
+                }
+
+                // Set the network type based on the chain
+                $tokenApi->setCurrentChain($chain);
+
+                // Create new wallet for this chain
+                $createWallet = $tokenApi->createNewWallet();
+
+                if ($createWallet['success'] == true) {
+                    $walletData = $createWallet['data'];
+
+                    // Store the new wallet address
+                    WalletAddressHistory::create([
+                        'wallet_id' => $wallet->id,
+                        'chain_id' => $chain->id,
+                        'address' => $walletData->address,
+                        'coin_type' => DEFAULT_COIN_TYPE,
+                        'pk' => ($walletData->privateKey ?? '') . ($walletData->address ?? ''),
+                        'public_key' => $walletData->publicKey ?? ''
+                    ]);
+
+                    $generatedAddresses[] = ['chain' => $chain->chain_name , 'address' => $walletData->address];
+                } else {
+                    // Log the failure for this specific chain
+                    storeException("Wallet generation failed for {$chain->chain_name}", $createWallet['message']);
+                }
+            }
+
+            // Prepare the response
+            if (!empty($generatedAddresses)) {
+                return $generatedAddresses;
+                $response = [
+                    'success' => true,
+                    'message' => 'Addresses generated successfully',
+                    'address' => $generatedAddresses
+                ];
+            }
+        } catch (\Exception $e) {
+            storeException('generateMultiChainTokenAddresses ex', $e->getMessage());
+            $response = [
+                'success' => false,
+                'message' => $e->getMessage(),
+                'addresses' => []
+            ];
+        }
+
         return $response;
     }
 

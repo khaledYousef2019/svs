@@ -27,6 +27,17 @@ class Coin extends Model
         'minimum_sell_amount',
         'minimum_withdrawal',
         'maximum_withdrawal',
-        'withdrawal_fees'
-        ];
+        'withdrawal_fees',
+        'usd',
+        'usd_24h_vol',
+        'usd_24h_change',
+        'last_updated_at',
+        'description',
+        'coin_rank',
+        'website',
+        'bg_color',
+        'subbly',
+        'coingecko_id',
+        'coincodex_id'
+    ];
 }

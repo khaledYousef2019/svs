@@ -17,6 +17,7 @@ use App\Services\Logger;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CoinController extends Controller
 {
@@ -34,7 +35,7 @@ class CoinController extends Controller
         $query =  BuyCoinHistory::query();
         $items = $this->applyFiltersAndSorting($query, $request);
         $data = $items->getCollection()->transform(function ($dpst) use ($request) {
-            if (isset($request->filters) && $request->filters['deposit_status'] == 'Pending'){
+            if (deposit_status($dpst->status) == 'Pending'){
                 $dpst->action = new \stdClass();
                 $dpst->action->accept = route('adminAcceptPendingBuyCoin', encrypt($dpst->id));
                 $dpst->action->reject = route('adminRejectPendingBuyCoin', encrypt($dpst->id));
@@ -124,7 +125,7 @@ class CoinController extends Controller
                 $primary->increment('balance', $transaction->coin);
                 $transaction->status = STATUS_SUCCESS;
                 $transaction->save();
-
+                sendBuyCoinEmail('transactions.coin-order-accept',$transaction);
                 if (!empty($transaction->phase_id)) {
                     dispatch(new DistributeBuyCoinReferralBonus($transaction))->onQueue('referral');
                 }
@@ -153,6 +154,8 @@ class CoinController extends Controller
             $transaction = BuyCoinHistory::where(['id' => $wdrl_id, 'status' => STATUS_PENDING])->firstOrFail();
             $transaction->status = STATUS_REJECTED;
             $transaction->update();
+            sendBuyCoinEmail('transactions.coin-order-reject',$transaction);
+
 
             return response()->json(['success' => true, 'message' => 'Request cancelled successfully']);
         }
@@ -221,10 +224,10 @@ class CoinController extends Controller
             ->select('admin_give_coin_histories.*', 'users.email as email');
 
         $fieldTableMap = [
-            'sender' => ['sender' => 'first_name'],
-            'receiver' => ['receiver' => 'first_name'],
-            'address' => 'deposite_transactions'
+            'email' => 'users',
+            'wallet_id' => ['wallet' => 'name'],
         ];
+
         $items = $this->applyFiltersAndSorting($query, $request, $fieldTableMap);
         $data = $items->getCollection()->transform(function ($item) {
             return [
@@ -264,7 +267,8 @@ class CoinController extends Controller
                     'is_withdrawal' => $item->is_withdrawal,
                     'minimum_withdrawal' => $item->minimum_withdrawal,
                     'maximum_withdrawal' => $item->maximum_withdrawal,
-                    'fee' => $item->withdrawal_fees,
+                    'bg_color' => $item->bg_color,
+                    'withdrawal_fees' => $item->withdrawal_fees,
                     'updated_at' => $item->updated_at->toDateTimeString(),
                     'action' => ['Edit' => route('adminCoinEdit', ['id' => encrypt($item->id)])]
 
@@ -424,42 +428,64 @@ class CoinController extends Controller
     public function adminCoinSaveProcess(CoinRequest $request)
     {
         try {
-            $input = $request->only([
-                'name', 'is_deposit', 'is_withdrawal', 'status', 'trade_status',
+            // Validate and get only the required fields
+            $validatedData = $request->all();
+            // Map boolean fields to 1 or 0
+            $booleanFields = [
+                'is_deposit', 'is_withdrawal', 'status', 'trade_status',
                 'is_wallet', 'is_buy', 'is_virtual_amount', 'is_currency',
-                'is_base', 'is_transferable', 'withdrawal_fees', 'minimum_buy_amount',
-                'minimum_sell_amount', 'minimum_withdrawal', 'maximum_withdrawal'
-            ]);
+                'is_base', 'is_transferable'
+            ];
 
-            $input = array_map(function($value) {
-                return isset($value) ? 1 : 0;
-            }, $input);
+            foreach ($booleanFields as $field) {
+                $validatedData[$field] = isset($validatedData[$field]) ? 1 : 0;
+            }
 
+            // Handle file upload
             if ($request->hasFile('coin_icon')) {
                 $icon = uploadFile($request->file('coin_icon'), IMG_ICON_PATH, '');
-                if ($icon !== false) {
-                    $input['coin_icon'] = $icon;
+
+                if ($icon === false) {
+                    throw new \Exception('Failed to upload coin icon.');
+                }
+
+                $validatedData['coin_icon'] = $icon;
+            }
+
+            // Add optional fields if they exist
+            $optionalFields = ['bg_color', 'name'];
+            foreach ($optionalFields as $field) {
+                if ($request->has($field)) {
+                    $validatedData[$field] = $request->input($field);
                 }
             }
 
-            $coin_service = new CoinService();
-            $coin = $coin_service->addCoin($input, $request->coin_id);
+            // Save coin data using the service layer
+            $coinService = new CoinService();
 
-            if (isset($coin) && $coin['success']) {
+            $validatedData = array_filter($validatedData, fn($key) => $key !== 'coin_id', ARRAY_FILTER_USE_KEY);
+            $coin = $coinService->addCoin($validatedData, $request->input('coin_id'));
+
+            // Handle service response
+            if ($coin['success']) {
                 return response()->json([
                     'success' => true,
                     'message' => $coin['message']
                 ]);
-            } else {
-                return response()->json([
-                    'success' => false,
-                    'message' => $coin['message']
-                ], 400);
             }
-        } catch (\Exception $e) {
+
             return response()->json([
                 'success' => false,
-                'message' => $e->getMessage()
+                'message' => $coin['message']
+            ], 400);
+
+        } catch (\Exception $e) {
+            // Log the exception for debugging
+            Log::error('Error in adminCoinSaveProcess: ' . $e->getMessage());
+
+            return response()->json([
+                'success' => false,
+                'message' => 'An error occurred while processing your request.'
             ], 500);
         }
     }

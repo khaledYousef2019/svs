@@ -115,6 +115,7 @@ class WalletNotifier extends Controller
                             $notifyData['user_id'] = $depositCreate->receiverWallet->user_id;
                             $notifyData['title'] = __('You received ').$depositCreate->amount .__(' from ').$depositCreate->address;
                             $notifyData['notification_body'] = $notifyData['title']. __('. and the tx is ').$depositCreate->transaction_id;
+                            sendTransactionEmail('transactions.accepted-deposit',$depositCreate);
                             Notification::create($notifyData);
 
                             Log::info('Balance before deposit '.$wallet->balance);

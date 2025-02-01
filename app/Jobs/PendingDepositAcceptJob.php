@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Model\Chain;
 use App\Model\DepositeTransaction;
 use App\Repository\CustomTokenRepository;
 use App\Services\Logger;
@@ -39,17 +40,26 @@ class PendingDepositAcceptJob implements ShouldQueue
     public function handle()
     {
         $tokenRepo = new CustomTokenRepository();
-        try {
-            storeDetailsException('PendingDepositAcceptJob', 'called');
-            if (!empty($this->transactions)) {
-                storeDetailsException('PendingDepositAcceptJob ', 'pending deposit list found');
-                $tokenRepo->tokenReceiveManuallyByAdmin($this->transactions,$this->adminId);
-            } else {
-                storeDetailsException('PendingDepositAcceptJob', 'deposit list not found');
+        $chains = Chain::join('real_wallets','real_wallets.chain_id','=','chains.id')
+            ->join('tokens','tokens.chain_id','=','chains.id')
+            ->where('chains.status',STATUS_ACTIVE)
+            ->select('chains.*','real_wallets.*','tokens.*','chains.name as chain_name')
+            ->get();
+        foreach ($chains as $chain) {
+            $tokenRepo->setCurrentChain($chain);
+            try {
+                storeDetailsException('PendingDepositAcceptJob', 'called');
+                if (!empty($this->transactions)) {
+                    storeDetailsException('PendingDepositAcceptJob ', 'pending deposit list found');
+                    $tokenRepo->tokenReceiveManuallyByAdmin($this->transactions,$this->adminId);
+                } else {
+                    storeDetailsException('PendingDepositAcceptJob', 'deposit list not found');
+                }
+            } catch (\Exception $e) {
+                storeDetailsException('PendingDepositAcceptJob', $e->getMessage());
             }
-        } catch (\Exception $e) {
-            storeDetailsException('PendingDepositAcceptJob', $e->getMessage());
         }
+
     }
 
     /**

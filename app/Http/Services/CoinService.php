@@ -99,7 +99,7 @@ class CoinService extends BaseService {
 
             return ['success'=>true,'data'=>$coin,'message'=>__('updated successful.')];
         } catch(\Exception $e) {
-            return ['success'=>false,'data'=>null,'message'=>'something.went.wrong','error' => $e->getMessage()];
+            return ['success'=>false,'data'=>null,'message'=>$e->getMessage(),'error' => $e->getMessage()];
         }
     }
 

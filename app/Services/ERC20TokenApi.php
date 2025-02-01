@@ -1,6 +1,8 @@
 <?php
 namespace App\Services;
 
+use App\Model\Token;
+
 class ERC20TokenApi {
 	private $chainNetwork = '';
 	private $headerKey = '';
@@ -15,6 +17,17 @@ class ERC20TokenApi {
     private $adminAddress;
     private $chainId;
 
+    public function setCurrentChain($chainNetwork)
+    {
+        $this->chainNetwork = $chainNetwork->chain_links ? json_decode($chainNetwork->chain_links)[0] : '';
+        $this->contractAddress = $chainNetwork->contract_address ?? '';
+        $this->decimalValue = isset($chainNetwork->decimals) ? intval($chainNetwork->decimals) : 18;
+        $this->gasLimit = isset($chainNetwork->gas_limit) ? intval($chainNetwork->gas_limit) : 0;
+        $this->prevBlockCount = isset($chainNetwork->previous_block_count) ? intval($chainNetwork->previous_block_count) : 100;
+        $this->adminAddress = $chainNetwork->address ?? '';
+        $this->chainId = $chainNetwork->chain_id ?? 0;
+        $this->networkType = isset($chainNetwork->network_type) ? intval($chainNetwork->network_type) : ERC20_TOKEN;
+    }
     public function __construct()
     {
         $this->logger = new Logger();
@@ -22,13 +35,13 @@ class ERC20TokenApi {
         $this->chainNetwork = $this->settings['chain_link'] ?? '';
         $this->headerKey = env('HEADER_API_KEY') ?? '32c412e1f281fea2c93fd972a212040b692b9bdd';
         $this->nodeUrl = env('ERC20_NODE_URL') ?? 'http://localhost:4000/';
-        $this->contractAddress = $this->settings['contract_address'] ?? '';
-        $this->decimalValue = isset($this->settings['contract_decimal']) ? intval($this->settings['contract_decimal']) : 18;
-        $this->gasLimit = isset($this->settings['gas_limit']) ? intval($this->settings['gas_limit']) : 0;
-        $this->prevBlockCount = isset($this->settings['previous_block_count']) ? intval($this->settings['previous_block_count']) : 100;
-        $this->adminAddress = $this->settings['wallet_address'] ?? '';
-        $this->chainId = $this->settings['chain_id'] ?? 0;
-        $this->networkType = isset($this->settings['network_type']) ? intval($this->settings['network_type']) : ERC20_TOKEN;
+//        $this->contractAddress = $this->settings['contract_address'] ?? '';
+//        $this->decimalValue = isset($this->settings['contract_decimal']) ? intval($this->settings['contract_decimal']) : 18;
+//        $this->gasLimit = isset($this->settings['gas_limit']) ? intval($this->settings['gas_limit']) : 0;
+//        $this->prevBlockCount = isset($this->settings['previous_block_count']) ? intval($this->settings['previous_block_count']) : 100;
+//        $this->adminAddress = $this->settings['wallet_address'] ?? '';
+//        $this->chainId = $this->settings['chain_id'] ?? 0;
+//        $this->networkType = isset($this->settings['network_type']) ? intval($this->settings['network_type']) : ERC20_TOKEN;
 
     }
 

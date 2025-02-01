@@ -18,6 +18,10 @@ use Illuminate\Http\Request;
 //});
 
 Route::post('/coin-payment-notifier','Api\WalletNotifier@coinPaymentNotifier')->name('coinPaymentNotifier');
+Route::get('/news', 'Api\NewsController@fetch');
+//Route::get('/coin-history','Api\HomeController@index')->name('coinHistory');
+Route::get('/slide', 'Api\HomeController@slideShow')->name('slideShow');
+
 
 Route::group(['namespace' => 'Api'], function () {
     Route::post('sign-up','AuthController@signUp');

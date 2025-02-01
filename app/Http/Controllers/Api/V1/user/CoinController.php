@@ -30,7 +30,7 @@ class CoinController extends Controller
         try {
             $data['title'] = __('Buy Coin');
             $data['settings'] = allsetting();
-            $data['STRIPE_KEY'] = isset(settings()['STRIPE_KEY']) ? settings()['STRIPE_KEY'] : 'pk_test_51HeHMCAk5wRsVMs9lKf2I5NzB8RyfvofDKdjq1sHQ8ydQtkmuRKgQYj7AokBqzo9tDWdkJOYPt3mjVy0UZzoRuHZ00U2htSb77';
+            $data['STRIPE_KEY'] = isset(settings()['STRIPE_KEY']) ? settings()['STRIPE_KEY'] : '';
             $data['banks'] = Bank::where(['status' => STATUS_ACTIVE])->get();
             if (env('APP_ENV') == 'local') {
                 $data['coins'] = Coin::where(['status' => STATUS_ACTIVE])->where('type', '<>', DEFAULT_COIN_TYPE)->get();
@@ -221,6 +221,7 @@ class CoinController extends Controller
                 if ($request->payment_type == BTC) {
                     $buyCoinWithCoinPayment = $coinRepo->buyCoinWithCoinPayment($request, $coin_amount, $coin_price_doller, $phase_id, $referral_level, $phase_fees, $bonus, $affiliation_percentage);
                     if ($buyCoinWithCoinPayment['success'] == true) {
+                        sendCoinpaymentBuyCoinEmail('transactions.coinpayment-coin-order', $buyCoinWithCoinPayment['data']);
                         return response()->json(['success' => true, 'message' => $buyCoinWithCoinPayment['message'], 'data' => ['address' => $buyCoinWithCoinPayment['data']->address]]);
                     } else {
                         return response()->json(['success' => false, 'message' => $buyCoinWithCoinPayment['message']], 400);
@@ -228,6 +229,7 @@ class CoinController extends Controller
                 } elseif ($request->payment_type == BANK_DEPOSIT) {
                     $buyCoinWithBank = $coinRepo->buyCoinWithBank($request, $coin_amount, $coin_price_doller, $coin_price_btc, $phase_id, $referral_level, $phase_fees, $bonus, $affiliation_percentage);
                     if ($buyCoinWithBank['success'] == true) {
+                        sendBuyCoinEmail('transactions.coin-order', $buyCoinWithBank['data']);
                         return response()->json(['success' => true, 'message' => $buyCoinWithBank['message']]);
                     } else {
                         return response()->json(['success' => false, 'message' => $buyCoinWithBank['message']], 400);
@@ -235,6 +237,7 @@ class CoinController extends Controller
                 } elseif ($request->payment_type == STRIPE) {
                     $buyCoinWithStripe = $coinRepo->buyCoinWithStripe($request, $coin_amount, $coin_price_doller, $coin_price_btc, $phase_id, $referral_level, $phase_fees, $bonus, $affiliation_percentage);
                     if ($buyCoinWithStripe['success'] == true) {
+                        sendBuyCoinEmail('transactions.coin-order', $buyCoinWithStripe['data']);
                         return response()->json(['success' => true, 'message' => $buyCoinWithStripe['message']]);
                     } else {
                         return response()->json(['success' => false, 'message' => $buyCoinWithStripe['message']], 400);

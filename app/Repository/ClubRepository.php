@@ -233,6 +233,7 @@ class ClubRepository
                 'amount' => $request->amount,
                 'bonus_type' => $request->bonus_type,
                 'bonus' => $request->bonus,
+                'bg_color' => $request->bg_color ?? "#f7f7f7",
                 'bonus_coin_type' => $request->bonus_coin_type,
                 'status' => $request->status,
                 'description' => $request->description,

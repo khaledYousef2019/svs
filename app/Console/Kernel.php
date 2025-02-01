@@ -16,7 +16,9 @@ class Kernel extends ConsoleKernel
         Commands\MemberBonusDistribute::class,
         Commands\CustomTokenDeposit::class,
         Commands\AdjustCustomTokenDeposit::class,
-        Commands\SvsPriceUpdate::class
+        Commands\SvsPriceUpdate::class,
+        Commands\CoinInfoUpdate::class,
+        Commands\CoinPriceUpdate::class
     ];
 
     /**
@@ -29,13 +31,20 @@ class Kernel extends ConsoleKernel
     {
          $schedule->command('command:membershipbonus')
              ->daily();
+
         $schedule->command('custom-token-deposit')
             ->everyMinute();
 
         $schedule->command('adjust-token-deposit')
             ->everyThirtyMinutes();
 
+        $schedule->command('coininfo:update')
+            ->daily();
+
         $schedule->command('SvsPriceUpdate')
+            ->everyFiveMinutes();
+
+        $schedule->command('coinprice:update')
             ->everyFiveMinutes();
     }
 

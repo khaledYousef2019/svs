@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: bacchu
- * Date: 8/24/17
+ * User: khaled
+ * Date: 30/10/24
  * Time: 1:34 PM
  */
 
@@ -31,9 +31,7 @@ class SmsService
         } catch (\Exception $e) {
             Log::info($e->getMessage());
             return false;
-
         }
-
         return true;
     }
 }

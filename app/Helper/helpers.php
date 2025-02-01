@@ -11,6 +11,7 @@ use App\Model\VerificationDetails;
 use App\Model\Wallet;
 use App\Model\WithdrawHistory;
 use App\Services\CoinPaymentsAPI;
+use App\Services\MailService;
 use App\User;
 use Carbon\Carbon;
 use \Illuminate\Support\Facades\Auth;
@@ -2000,4 +2001,108 @@ function getTab($request)
     } else {
         return 'general';
     }
+}
+
+// send transaction email
+/**
+ * @param $template
+ * @param $data
+ * @return string
+ */
+function sendBuyCoinEmail($template ,$_data, $mail_key = [])
+{
+    $mailService = new MailService();
+    $user = User::find($_data->user_id);
+    $userName = $user->first_name.' '.$user->last_name;
+    $userEmail = $user->email;
+    $companyName = isset(allsetting()['app_title']) && !empty(allsetting()['app_title']) ? allsetting()['app_title'] : __('Company Name');
+    $subject = __('Buy Coin order received | :companyName', ['companyName' => $companyName]);
+    if ($_data->status == STATUS_REJECTED){
+        $subject = __('Buy Coin order rejected | :companyName', ['companyName' => $companyName]);
+    }
+    $data['data'] = $user;
+    $data['data']->order = $_data;
+
+    $data['key'] = $mail_key;
+    $mailService->send('email.'.$template, $data, $userEmail, $userName, $subject);
+}
+// send coinPayment deposit email
+/**
+ * @param $template
+ * @param $data
+ * @return string
+ */
+function sendCoinpaymentBuyCoinEmail($template ,$_data, $mail_key = [])
+{
+    $mailService = new MailService();
+    $user = User::find($_data->user_id);
+    $userName = $user->first_name.' '.$user->last_name;
+    $userEmail = $user->email;
+    $companyName = isset(allsetting()['app_title']) && !empty(allsetting()['app_title']) ? allsetting()['app_title'] : __('Company Name');
+    $subject = __('Buy Coin order request received | :companyName', ['companyName' => $companyName]);
+    $data['data'] = $user;
+    $data['data']->order = $_data;
+    $address = $_data->address;
+    if (is_numeric($address)) {
+        $coinAddress = BuyCoinHistory::where(['user_id' => Auth::id(), 'id' => $address, 'status' => STATUS_PENDING])->first();
+    } else {
+        $coinAddress = BuyCoinHistory::where(['user_id' => Auth::id(), 'address' => $address, 'status' => STATUS_PENDING])->first();
+    }
+    $data['coinAddress'] = $coinAddress;
+
+    $data['key'] = $mail_key;
+    $mailService->send('email.'.$template, $data, $userEmail, $userName, $subject);
+}
+
+
+// send transaction email
+/**
+ * @param $template
+ * @param $data
+ * @return string
+ */
+function sendTransactionEmail($template ,$trx, $mail_key = [])
+{
+    // echo "<pre>";
+    // var_dump($trx->transaction_hash);exit();
+    $trx = (object) $trx;
+    $mailService = new MailService();
+    $user = User::join('wallets', 'wallets.user_id', 'users.id')->where('wallets.id',$trx->receiver_wallet_id ? $trx->receiver_wallet_id : $trx->wallet_id)->first();
+    $userName = $user->first_name.' '.$user->last_name;
+    $userEmail = $user->email;
+    $companyName = isset(allsetting()['app_title']) && !empty(allsetting()['app_title']) ? allsetting()['app_title'] : __('Company Name');
+    $subject = __('New Transaction Email | :companyName', ['companyName' => $companyName]);
+    $data['data'] = $user;
+    $data['data']->trx = $trx;
+
+    $data['key'] = $mail_key;
+    $mailService->send('email.'.$template, $data, $userEmail, $userName, $subject);
+}
+
+// send withdraw email
+/**
+ * @param $template
+ * @param $data
+ * @return string
+ */
+function sendWithdrawConfirmEmail($template ,$trx, $mail_key = [])
+{
+    $trx = (object) $trx;
+    Log::info('from withdraw email helper');
+
+    Log::info(json_encode($trx));
+
+    $mailService = new MailService();
+    $settings = UserSetting::find(Auth::id());
+    // var_dump($settings);exit();
+    $user = User::join('wallets', 'wallets.user_id', 'users.id')->where('wallets.id', $trx->wallet_id)->first();
+    $userName = $user->first_name.' '.$user->last_name;
+    $userEmail = $user->email;
+    $companyName = isset(allsetting()['app_title']) && !empty(allsetting()['app_title']) ? allsetting()['app_title'] : __('Company Name');
+    $subject = __('New Transaction Email | :companyName', ['companyName' => $companyName]);
+    $data['data'] = $user;
+    $data['data']->trx = $trx;
+
+    $data['key'] = $mail_key;
+    $mailService->send('email.'.$template, $data, $userEmail, $userName, $subject);
 }

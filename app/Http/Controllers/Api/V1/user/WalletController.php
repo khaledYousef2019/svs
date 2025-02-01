@@ -8,6 +8,7 @@ use App\Http\Requests\WalletCreateRequest;
 use App\Http\Requests\withDrawRequest;
 use App\Http\Services\TransactionService;
 use App\Jobs\Withdrawal;
+use App\Model\Chain;
 use App\Model\Coin;
 use App\Model\CoWalletWithdrawApproval;
 use App\Model\DepositeTransaction;
@@ -239,6 +240,54 @@ class WalletController extends Controller
         return response()->json(['success' => false, 'message' => __("Key can't be empty")], 400);
     }
 
+    public function depositeList(Request $request){
+        try {
+
+            $query = DepositeTransaction::join('wallets', 'wallets.id', '=','deposite_transactions.receiver_wallet_id')
+                ->where('wallets.user_id', Auth::id());
+            $items = $this->applyFiltersAndSorting($query, $request);
+            $data = $items->getCollection()->transform(function ($item) {
+                $item->deposit_status = deposit_status($item->status);
+                unset($item->status);
+                return $item;
+            });
+
+            // Return JSON response for React
+            return response()->json([
+                'data' => $data,
+                'recordsTotal' => $items->total(),
+                'recordsFiltered' => $items->total(),
+                'draw' => $request->input('draw'),
+            ]);
+
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'data' => [], 'message' => __($e->getMessage())]);
+        }
+    }
+
+    public function withdrawList(Request $request){
+        try {
+            $query = WithdrawHistory::join('wallets', 'wallets.id', '=','withdraw_histories.wallet_id')
+                ->where('wallets.user_id', Auth::id());
+            $items = $this->applyFiltersAndSorting($query, $request);
+            $data = $items->getCollection()->transform(function ($item) {
+                $item->deposit_status = deposit_status($item->status);
+                unset($item->status);
+                return $item;
+            });
+
+            // Return JSON response for React
+            return response()->json([
+                'data' => $data,
+                'recordsTotal' => $items->total(),
+                'recordsFiltered' => $items->total(),
+                'draw' => $request->input('draw'),
+            ]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'data' => [], 'message' => __($e->getMessage())]);
+        }
+    }
+
     // wallet details
     public function walletDetails(Request $request, $id)
     {
@@ -275,13 +324,12 @@ class WalletController extends Controller
         }elseif ($tab && $tab == 'withdraws'){
             $history = WithdrawHistory::where('wallet_id', $id)->orderBy('id', 'desc');
         }else {
-            $exists = WalletAddressHistory::where('wallet_id',$id)->orderBy('created_at','desc')->first();
             $wal = Wallet::find($id);
             if ($wal->coin_type == DEFAULT_COIN_TYPE) {
-                $repo = new WalletRepository();
-                $repo->generateTokenAddress($wallet->id);
-                $data['address'] = WalletAddressHistory::where('wallet_id', $id)->orderBy('created_at', 'desc')->first()->address ?? '';
+                 $repo = new WalletRepository();
+                 $data['address'] = $repo->generateMultiChainTokenAddresses($wallet->id);
             }else{
+                $exists = WalletAddressHistory::where('wallet_id',$id)->orderBy('created_at','desc')->first();
                 $data['address'] = (!empty($exists)) ? $exists->address : get_coin_payment_address($wallet->coin_type);
                 if (!empty($data['address'])) {
                     if (empty($exists)) {

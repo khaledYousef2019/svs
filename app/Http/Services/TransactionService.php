@@ -450,7 +450,8 @@ class TransactionService
                 ];
 
                 $transaction = WithdrawHistory::create($transactionArray);
-                Log::info(json_encode($transaction));
+                sendWithdrawConfirmEmail('transactions.withdraw-request',$transaction);
+//                Log::info(json_encode($transaction));
 
                 if(!empty($tempWithdrawId)) {
                     $success = TempWithdraw::where(['id'=>$tempWithdrawId])->update(['withdraw_id'=>$transaction->id]);
@@ -919,7 +920,7 @@ class TransactionService
         $mailService = app(MailService::class);
         $userName = $sender_user->first_name . ' ' . $sender_user->last_name;
         $userEmail = $sender_user->email;
-        $companyName = isset($default['company']) && !empty($default['company']) ? $default['company'] : __('Coin Wallet');
+        $companyName = isset($default['company']) && !empty($default['company']) ? $default['company'] : __('SVS Wallet');
         $subject = __(':emailSubject | :companyName', ['emailSubject' => $emailSubject, 'companyName' => $companyName]);
         $data['data'] = $sender_user;
         $data['anotherUser'] = $receiver_user;
@@ -927,7 +928,7 @@ class TransactionService
         $mailService->send($mailTemplet, $data, $userEmail, $userName, $subject);
     }
 
-    private function sendExternalTransactionMail($sender_user, $mailTemplet, $address, $amount, $emailSubject)
+    public function sendExternalTransactionMail($sender_user, $mailTemplet, $address, $amount, $emailSubject)
     {
         $mailService = app(MailService::class);
         $userName = $sender_user->first_name . ' ' . $sender_user->last_name;

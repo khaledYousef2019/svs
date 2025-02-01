@@ -22,12 +22,20 @@ class HomeController extends Controller
 
     // custom page
     public function getCustomPage($id,$key){
-        $data['content'] = allsetting();
-        $data['custom_links'] = CustomPage::orderBy('data_order','asc')->get();
-        $data['item'] = CustomPage::find($id);
-
-        return view('landing.custom_page',$data);
+//        $data['content'] = allsetting();
+//        $data['custom_links'] = CustomPage::orderBy('data_order','asc')->get();
+        $data = CustomPage::find($id);
+        return response()->json($data);
     }
+
+//    public function getCustomPage($id,$key){
+//        $data['content'] = allsetting();
+//        $data['custom_links'] = CustomPage::orderBy('data_order','asc')->get();
+//        $data['item'] = CustomPage::find($id);
+//
+//        return view('landing.custom_page',$data);
+//    }
+
 
     public function contactUs(Request $request){
         $validatedData = $request->validate([

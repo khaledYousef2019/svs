@@ -14,6 +14,7 @@ use App\Model\Wallet;
 use App\Model\WalletAddressHistory;
 use App\Model\WalletCoUser;
 use App\Model\WithdrawHistory;
+use App\Repository\WalletRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -42,7 +43,7 @@ class WalletController extends Controller
                     });
                 })
                 ->orderBy('created_at', 'DESC')
-                ->select('wallets.*')
+                ->select('wallets.*','coins.bg_color')
                 ->paginate($limit);
         }else{
             $data['wallets'] = Wallet::select('wallets.*')
@@ -60,10 +61,22 @@ class WalletController extends Controller
             })
             ->orderBy('created_at', 'DESC')->paginate($limit);
         }
-                        
+
         $data['wallets']->map(function($wallet){
             $wallet->minimum_withdrawal = $wallet->coin->minimum_withdrawal;
             $wallet->maximum_withdrawal = $wallet->coin->maximum_withdrawal;
+            $wallet->last_updated_at = $wallet->last_updated_at ? date('m/d/Y H:i:s', $wallet->last_updated_at) : '';
+
+            $wallet->usd_24h_vol = $wallet->coin->usd_24h_vol ? round($wallet->coin->usd_24h_vol,2) : 0;
+            $wallet->usd_24h_change = $wallet->coin->usd_24h_change ? round($wallet->coin->usd_24h_change,2) : 0;
+            $wallet->website = $wallet->coin->website ?  $wallet->coin->website : '';
+            $wallet->description = $wallet->coin->description ?strip_tags($wallet->coin->description) : '';
+            $wallet->coin_rank = $wallet->coin->coin_rank ? $wallet->coin->coin_rank : 0;
+            $wallet->subbly = $wallet->coin->subbly ??  "0";
+            $wallet->usd = $wallet->coin->usd ?? 0 ;
+            $wallet->coingecko_id = $wallet->coin->coingecko_id ?? '';
+            $wallet->image = $wallet->coin->coin_icon ?? '';
+
             unset($wallet->coin);
         });
         $data = ['success' => true, 'data' => $data['wallets'], 'message' => __('Wallet List')];
@@ -219,16 +232,36 @@ class WalletController extends Controller
     {
         try {
             if($request->wallet_id){
-                $address = DB::table('wallet_address_histories')->select('wallet_address_histories.address')
-                    ->where('wallet_address_histories.wallet_id', '=', $request->wallet_id)
-                    ->orderBy('wallet_address_histories.id','DESC')
-                    ->first();
+                $wallet = Wallet::find($request->wallet_id);
+                if ($wallet && $wallet->coin_type == DEFAULT_COIN_TYPE){
+                    $address = DB::table('wallet_address_histories as wah')
+                        ->join(
+                            DB::raw('(SELECT MAX(id) as max_id FROM wallet_address_histories WHERE wallet_id = ? GROUP BY chain_id) as subquery'),
+                            'wah.id',
+                            '=',
+                            'subquery.max_id'
+                        )
+                        ->select('wah.address')
+                        ->setBindings([$request->wallet_id])
+                        ->orderBy('wah.id', 'DESC')
+                        ->get();
+                }else{
+                    $address = DB::table('wallet_address_histories')->select('wallet_address_histories.address')
+                        ->where('wallet_address_histories.wallet_id', '=', $request->wallet_id)
+                        ->orderBy('wallet_address_histories.id','DESC')
+                        ->first();
+                }
             }
             if(isset($address->address)) {
                 return response()->json(['success' => true, 'data' => ['address'=>$address->address], 'message' => __('Address found successfully')]);
             } else {
                 $myWallet = Wallet::find($request->wallet_id);
-                $address = get_coin_payment_address($myWallet->coin_type);
+                if ($myWallet->coin_type == DEFAULT_COIN_TYPE) {
+                    $repo = new WalletRepository();
+                    $address = $repo->generateMultiChainTokenAddresses($myWallet->id);
+                }else{
+                    $address = get_coin_payment_address($myWallet->coin_type);
+                }
                 return response()->json(['success' => true, 'data' => ['address'=>$address], 'message' => __('Address generated successfully')]);
             }
         } catch (\Exception $e) {

@@ -100,7 +100,7 @@ class UserController extends Controller
             $coin = Coin::where('type', DEFAULT_COIN_TYPE)->first();
             Wallet::create([
                 'user_id' => $user->id,
-                'name' => 'Default wallet',
+                'name' => DEFAULT_COIN_TYPE.' wallet',
                 'status' => STATUS_SUCCESS,
                 'is_primary' => STATUS_SUCCESS,
                 'balance' => 0.0000000,

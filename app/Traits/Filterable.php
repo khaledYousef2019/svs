@@ -21,7 +21,6 @@ trait Filterable
         // Apply pagination
         $perPage = $request->input('length', 10);
 
-//        dd($query->toSql(), $query->getBindings());
         return $query->paginate($perPage);
     }
 
@@ -39,6 +38,17 @@ trait Filterable
         }
     }
 
+    private function isFieldConcatenated($field, $fieldTableMap): bool
+    {
+        // Check if the field is part of a concatenated mapping (e.g., first_name is part of first_name.last_name)
+        foreach ($fieldTableMap as $key => $value) {
+            if (strpos($key, '.') !== false && in_array($field, explode('.', $key))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private function applySearchableFields(Builder $query, Request $request, $fieldTableMap)
     {
         if ($search = $request->input('search')['value'] ?? null) {
@@ -49,45 +59,78 @@ trait Filterable
                     foreach ($searchableFields as $field) {
                         // Transform search term if field is deposit_status or status
                         $searchModified = $this->transformStatus($field, $search);
-                        $this->buildSearchQuery($q, $field, $searchModified, $fieldTableMap);
 
+                        $isConcatenated = $this->isFieldConcatenated($field, $fieldTableMap);
+                        if ($isConcatenated) {
+                            $this->buildConcatenatedSearchQuery($q, $field, $search, $fieldTableMap);
+                        } else {
+                            $this->buildSearchQuery($q, $field, $search, $fieldTableMap);
+                        }
                     }
                 });
             }
         }
     }
 
+    private function buildConcatenatedSearchQuery($q, $field, $search, $fieldTableMap)
+    {
+        // Find the concatenated field mapping (e.g., first_name.last_name => users)
+        $concatenatedField = $this->findConcatenatedFieldMapping($field, $fieldTableMap);
 
+        if ($concatenatedField) {
+            $table = $fieldTableMap[$concatenatedField];
+            $fields = explode('.', $concatenatedField);
+
+            if (\Schema::hasColumns($table, $fields)) {
+                $q->orWhere(function ($query) use ($table, $fields, $search) {
+                    $query->whereRaw("CONCAT({$table}.{$fields[0]}, ' ', {$table}.{$fields[1]}) LIKE ?", ["%{$search}%"]);
+                });
+            }
+        }
+    }
+    private function findConcatenatedFieldMapping($field, $fieldTableMap)
+    {
+        // Find the concatenated field mapping (e.g., first_name.last_name => users)
+        foreach ($fieldTableMap as $key => $value) {
+            if (strpos($key, '.') !== false && in_array($field, explode('.', $key))) {
+                return $key;
+            }
+        }
+        return null;
+    }
     private function buildSearchQuery($q, $field, $search, $fieldTableMap)
     {
         // Check for deposit_status and transform it to status
         if ($field === 'deposit_status') {
             $field = 'status';
         }
-//        if ($field === 'address_type') {
-//            $search =  ($search == "External") ?  'internal_address' : $search;
-//        }
+
         if (isset($fieldTableMap[$field])) {
             if (is_array($fieldTableMap[$field])) {
-
                 foreach ($fieldTableMap[$field] as $relation => $relationField) {
-                    if (\Schema::hasColumn($relation, $relationField)) {
+                    // Resolve the table name from the relationship
+                    $relatedModel = $q->getModel()->{$relation}()->getRelated();
+                    $tableName = $relatedModel->getTable();
+
+                    if (\Schema::hasColumn($tableName, $relationField)) {
                         $q->orWhereHas($relation, function ($query) use ($relationField, $search) {
                             $query->where($relationField, 'like', "%{$search}%");
                         });
+                    } else {
+                        \Log::error("Column '{$relationField}' does not exist in table '{$tableName}'.");
                     }
                 }
             } else {
                 if (\Schema::hasColumn($fieldTableMap[$field], $field)) {
                     $q->orWhere("{$fieldTableMap[$field]}.{$field}", 'like', "%{$search}%");
+                } else {
+                    \Log::error("Column '{$field}' does not exist in table '{$fieldTableMap[$field]}'.");
                 }
             }
         } else {
             $q->orWhere($field, 'like', "%{$search}%");
         }
     }
-
-
 
     private function applySorting(Builder $query, Request $request)
     {

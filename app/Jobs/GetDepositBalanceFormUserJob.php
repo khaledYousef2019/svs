@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Model\Chain;
 use App\Repository\CustomTokenRepository;
 use App\Services\Logger;
 use Illuminate\Bus\Queueable;
@@ -39,7 +40,15 @@ class GetDepositBalanceFormUserJob implements ShouldQueue
         try {
             $logger->log('GetDepositBalanceFormUserJob', 'process start');
             $repo = new CustomTokenRepository();
-            $repo->getDepositTokenFromUser();
+            $chains = Chain::join('real_wallets','real_wallets.chain_id','=','chains.id')
+                ->join('tokens','tokens.chain_id','=','chains.id')
+                ->where('chains.status',STATUS_ACTIVE)
+                ->select('chains.*','real_wallets.*','tokens.*','chains.name as chain_name')
+                ->get();
+            foreach ($chains as $chain) {
+                $repo->setCurrentChain($chain);
+                $repo->getDepositTokenFromUser();
+            }
         } catch (\Exception $e) {
             $logger->log('GetDepositBalanceFormUserJob', $e->getMessage());
         }
