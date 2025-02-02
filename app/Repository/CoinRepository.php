@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Stripe\Charge;
 use Stripe\PaymentIntent;
+use Stripe\PaymentMethod;
 use Stripe\Stripe;
 
 
@@ -455,7 +456,7 @@ class CoinRepository
 //        }
 //    }
 
-    public function buyCoinWithStripe($request, $coin_amount, $coin_price_doller, $coin_price_btc, $phase_id, possible$referral_level, $phase_fees, $bonus, $affiliation_percentage)
+    public function buyCoinWithStripe($request, $coin_amount, $coin_price_doller, $coin_price_btc, $phase_id, $referral_level, $phase_fees, $bonus, $affiliation_percentage)
     {
         $response = ['success' => false, 'message' => __('Something went wrong'), 'data' => (object)[]];
 
@@ -467,12 +468,20 @@ class CoinRepository
             }
 
             Stripe::setApiKey($stripe_secret);
-            $charge = Charge::create ([
-                "amount" => (int)$coin_price_doller * 100,
-                "currency" => "usd",
-                "source" => $request->stripeToken,
-                "description" => "Payment from ".Auth::user()->email. ' for '.$coin_price_doller. ' usd'
+
+            $paymentMethod = PaymentMethod::create([
+                'type' => 'card',
+                'card' => ['token' => $request->stripeToken],
             ]);
+
+            $charge = PaymentIntent::create([
+                "amount" => (int) ($coin_price_doller * 100), // Convert to cents
+                "currency" => "usd",
+                "payment_method" => $paymentMethod->id,
+                "description" => "Payment from " . Auth::user()->email . " for " . $coin_price_doller . " USD",
+                "confirm" => true, // Immediately confirm the payment
+            ]);
+
         } catch (\Exception $e) {
             $response = ['success' => false, 'message' => $e->getMessage(), 'data' => (object)[]];
             return $response;

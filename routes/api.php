@@ -29,6 +29,8 @@ Route::group(['namespace' => 'Api'], function () {
     Route::post('email-verify','AuthController@emailVerify');
     Route::post('forgot-password','AuthController@sendResetCode');
     Route::post('reset-password','AuthController@resetPassword');
+    Route::post('stripe/webhook', 'StripeWebhookController@handleWebhook');
+
 });
 
 Route::group(['namespace' => 'Api', 'middleware' => 'auth:api'], function () {
@@ -110,3 +112,4 @@ Route::group(['namespace' => 'Api', 'middleware' => ['auth:api','two_step']], fu
         Route::get('/wallet/users', 'user\WalletController@coWalletUsersApp')->name('coWalletUsersApp');
     });
 });
+

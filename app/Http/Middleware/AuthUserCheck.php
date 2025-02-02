@@ -22,13 +22,14 @@ class AuthUserCheck
             if (!empty($user->is_verified)) {
                 if ($user->status == STATUS_ACTIVE) {
                     if ($user->role == USER_ROLE_USER) {
+                        //a comment for 2fa till frontend is ready
                         // Check if 2FA is enabled and verified
-                        if ($user->g2f_enabled && !session()->has('g2f_checked')) {
-                            return response()->json([
-                                'success' => false,
-                                'message' => 'Two-factor authentication check is required.'
-                            ], 403);
-                        }
+                        // if ($user->g2f_enabled && !session()->has('g2f_checked')) {
+                        //     return response()->json([
+                        //         'success' => false,
+                        //         'message' => 'Two-factor authentication check is required.'
+                        //     ], 403);
+                        // }
                         return $next($request);
                     } else {
                         // Return JSON response for unauthorized access

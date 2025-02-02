@@ -34,7 +34,7 @@ class CoinController extends Controller
     {
         $query =  BuyCoinHistory::query();
         $items = $this->applyFiltersAndSorting($query, $request);
-        $data = $items->getCollection()->transform(function ($dpst) use ($request) {
+        $data = collect($items->items())->transform(function ($dpst) use ($request) {
             if (deposit_status($dpst->status) == 'Pending'){
                 $dpst->action = new \stdClass();
                 $dpst->action->accept = route('adminAcceptPendingBuyCoin', encrypt($dpst->id));
@@ -229,7 +229,7 @@ class CoinController extends Controller
         ];
 
         $items = $this->applyFiltersAndSorting($query, $request, $fieldTableMap);
-        $data = $items->getCollection()->transform(function ($item) {
+        $data = collect($items->items())->transform(function ($item) {
             return [
                 'id' => $item->id,
                 'wallet_id' => $item->wallet ? $item->wallet->name : 'N/A',
