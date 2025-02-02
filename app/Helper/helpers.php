@@ -2019,6 +2019,8 @@ function sendBuyCoinEmail($template ,$_data, $mail_key = [])
     $subject = __('Buy Coin order received | :companyName', ['companyName' => $companyName]);
     if ($_data->status == STATUS_REJECTED){
         $subject = __('Buy Coin order rejected | :companyName', ['companyName' => $companyName]);
+    }elseif($_data->status == STATUS_ACCEPTED){
+        $subject = __('Buy Coin order accepted | :companyName', ['companyName' => $companyName]);
     }
     $data['data'] = $user;
     $data['data']->order = $_data;
