@@ -87,4 +87,9 @@ Route::group(['prefix'=>'v1/user','namespace'=>'Api\V1\user','middleware'=> ['au
     Route::post('/phone-verify', 'ProfileController@phoneVerify')->name('phoneVerify');
     Route::get('/send-sms-for-verification', 'ProfileController@sendSMS')->name('sendSMS');
     Route::post('change-password-save', 'ProfileController@changePasswordSave')->name('changePasswordSave');
+
+    Route::get('investment-plans', 'InvPlanController@InvPlan')->name('InvPlan');
+    Route::post('investment-plan-details', 'InvPlanController@InvPlanDetails')->name('InvPlanDetails');
+    Route::post('join-plan', 'InvPlanController@joinPlan')->name('joinPlan');
+    Route::get('my-investments/{id?}', 'InvPlanController@myInvestment')->name('myInvestment');
 });

@@ -111,14 +111,25 @@ trait Filterable
                     // Resolve the table name from the relationship
                     $relatedModel = $q->getModel()->{$relation}()->getRelated();
                     $tableName = $relatedModel->getTable();
-
-                    if (\Schema::hasColumn($tableName, $relationField)) {
-                        $q->orWhereHas($relation, function ($query) use ($relationField, $search) {
-                            $query->where($relationField, 'like', "%{$search}%");
-                        });
-                    } else {
-                        \Log::error("Column '{$relationField}' does not exist in table '{$tableName}'.");
+                    if (strpos($relationField, '.') !== false) {
+                        $concatFields = explode('.', $relationField);
+                        if (\Schema::hasColumns($tableName, $concatFields)) {
+                            $q->orWhereHas($relation, function ($query) use ($concatFields, $search, $tableName) {
+                                $query->whereRaw("CONCAT({$tableName}.{$concatFields[0]}, ' ', {$tableName}.{$concatFields[1]}) LIKE ?", ["%{$search}%"]);
+                            });
+                        } else {
+                            \Log::error("Columns '{$relationField}' do not exist in table '{$tableName}'.");
+                        }
+                    }else{
+                        if (\Schema::hasColumn($tableName, $relationField)) {
+                            $q->orWhereHas($relation, function ($query) use ($relationField, $search) {
+                                $query->where($relationField, 'like', "%{$search}%");
+                            });
+                        } else {
+                            \Log::error("Column '{$relationField}' does not exist in table '{$tableName}'.");
+                        }
                     }
+                    
                 }
             } else {
                 if (\Schema::hasColumn($fieldTableMap[$field], $field)) {

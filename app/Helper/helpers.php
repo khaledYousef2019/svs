@@ -2108,3 +2108,12 @@ function sendWithdrawConfirmEmail($template ,$trx, $mail_key = [])
     $data['key'] = $mail_key;
     $mailService->send('email.'.$template, $data, $userEmail, $userName, $subject);
 }
+
+function getPlanExpirationDate($expiration){
+    $expiration = explode(" ", $expiration);
+    $digit = $expiration[0];
+    $frame = $expiration[1];
+    $toexpire =  "add". $frame;
+    $end_at = Carbon::now()->$toexpire($digit)->toDateTimeString();
+    return $end_at;
+}

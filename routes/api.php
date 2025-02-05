@@ -111,5 +111,11 @@ Route::group(['namespace' => 'Api', 'middleware' => ['auth:api','two_step']], fu
         Route::any('/wallet-import', 'user\WalletController@importWalletApp')->name('importWalletApp');
         Route::get('/wallet/users', 'user\WalletController@coWalletUsersApp')->name('coWalletUsersApp');
     });
+
+    Route::get('my-invest', 'user\PlanController@myInvestment')->name('myInvestment');
+    Route::get('invest-plans', 'user\PlanController@InvPlan')->name('InvPlan');
+    Route::get('invest-plan-details', 'user\PlanController@InvPlanDetails')->name('InvPlanDetails');
+    Route::post('join-invest-plan', 'user\PlanController@joinPlan')->name('joinPlan');
+
 });
 

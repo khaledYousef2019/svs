@@ -129,4 +129,23 @@ Route::group(['prefix'=>'v1/admin','namespace'=>'Api\V1\admin','middleware'=> ['
 
     Route::get('referral-bonus-history', 'ReferralController@adminReferralBonusHistory')->name('adminReferralBonusHistory');
 
+        
+    Route::get('investment-plans', 'PlanController@adminInvPlan')->name('adminInvPlan');
+    Route::get('investment-plan/inv-plan-activate-{id}', 'PlanController@adminInvPlanActivate')->name('adminInvPlanActivate');
+    Route::get('investment-plan/inv-plan-reject-{id}', 'PlanController@adminInvPlanReject')->name('adminInvPlanReject');
+    Route::get('investment-plan/inv-plan-delete-{id}', 'PlanController@adminInvPlanDelete')->name('adminInvPlanDelete');
+
+    Route::get('investment-plan/investors', 'PlanController@adminGetInvestors')->name('adminGetInvestors');
+    Route::get('pending-investment-plans', 'PlanController@adminShowPendingInvestment')->name('adminShowPendingInvestment');
+    Route::get('active-investment-plan', 'PlanController@adminShowActiveInvestment')->name('adminShowActiveInvestment');
+
+    Route::get('investment-plan/invest-{id}', 'PlanController@adminViewInvest')->name('adminViewInvest');
+    Route::get('investment-plan/edit-invest-{id}', 'PlanController@adminUserPlanEdit')->name('adminUserPlanEdit');
+    Route::get('investment-plan/investor-{id}', 'PlanController@adminViewInvestor')->name('adminViewInvestor');
+    Route::get('investment-plan/{id}', 'PlanController@adminViewPlan')->name('adminViewPlan');
+    Route::post('inv-user-plan-edit-process', 'PlanController@adminUserPlanEditProcess')->name('adminUserPlanEditProcess');
+    Route::post('inv-plan-add-process', 'PlanController@adminPlanAddProcess')->name('adminPlanAddProcess');
+    Route::post('admin-change-trade-mode', 'UserController@adminChangeUserTradeMode')->name('adminChangeUserTradeMode');
+
+    // Route::get('inv-plan-edit-{id}', 'PlanController@adminInvPlanEdit')->name('adminInvPlanEdit');
 });
